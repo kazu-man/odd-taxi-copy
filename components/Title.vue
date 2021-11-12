@@ -83,7 +83,7 @@
  }
 
  @Component
- export default class UserName extends Vue {
+ export default class Title extends Vue {
     flg: boolean = false;
     titlePosition: number = 40;
     lastY:number = 0;

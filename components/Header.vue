@@ -151,12 +151,15 @@ export default {
     .on-air{
         z-index: 2;
         cursor: pointer;
-        height:90%;   
+        height:80%;   
         position: absolute;
         right: 0;
     }
     .on-air img{
         height:100%;   
+    }
+    .on-air img:hover{
+        filter: brightness(1.1);
     }
     .onAir-enter{
         transform:translateX(100%);

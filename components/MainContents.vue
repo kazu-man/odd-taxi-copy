@@ -55,7 +55,7 @@
 
 
  @Component
- export default class UserName extends Vue {
+ export default class MainContents extends Vue {
 
     //computed
     // get titleHeight(){

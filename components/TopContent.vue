@@ -2,6 +2,7 @@
               
     <div style="z-index:2;position:relative;pointer-events: none;" ref="test">
         <img
+            v-on:load="load"
             style="width:100%;"
             src="/images/oddTaxi-background.png"
         >
@@ -12,6 +13,18 @@
                 src="/images/odokawaTaxi.png"
             >
         </transition>
+
+
+        <!-- <transition-group name="banners" @enter="afterTitleAnimationEnter">
+                    <img
+                    v-if="cityImageFlg" 
+                    :key="'prime-banner'"
+                    class="prime-banner"
+                    src="/images/prime_bn_pc.png"
+                >
+                <SideOfficial v-if="cityImageFlg" :key="'side-official'"/>
+        </transition-group> -->
+
     </div>
 
 </template>
@@ -20,7 +33,7 @@
     import {Component, Vue, Watch} from "nuxt-property-decorator";
 
     @Component 
-    export default class Index extends Vue {
+    export default class TopContent extends Vue {
         cityImageFlg : boolean = false;
         odokawaFlg : boolean = false;
         //bgスクロールアニメーション関連
@@ -33,14 +46,15 @@
         imageElement:any = null;
 
         mounted(){
-            this.cityImageFlg = true;
-            setTimeout(function(){
-              this.goto()
-            }.bind(this), 100);
+            this.cityImageFlg = true
             window.addEventListener('scroll', this.onScroll)
 
         }
-                
+        load(){
+            console.log("loaded!!")
+            this.goto()
+            this.odokawaFlg = true
+        }    
         goto() {
             this.imageElement = this.refs().test;
             console.log(this.imageElement);
@@ -49,11 +63,12 @@
             window.scrollTo(0, imageBottom);
             this.titlePosition = imageBottom;
             this.imageSize = imageBottom;
-            this.odokawaFlg = true
 
           setTimeout(function(){
+            console.log("scrollStart!!")
+
             this.slowScrollTop()
-          }.bind(this), 2800);
+          }.bind(this), 3500);
 
         }
 
@@ -109,7 +124,7 @@
         }
 
         odokawaEnter(el) {
-            el.style.transitionDelay = 800 + 'ms'
+            el.style.transitionDelay = 100 + 'ms'
         }
     }
 </script>
@@ -155,7 +170,5 @@
     left: -31%;
     z-index: 0;
 }
-
-
 
 </style>
