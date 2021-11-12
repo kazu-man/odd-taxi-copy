@@ -1,6 +1,6 @@
 <template>
 
-    <transition-group name="banners" @enter="afterTitleAnimationEnter" class="top-icons">
+    <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="top-icons">
         <div class="prime-banner"
             v-if="cityImageFlg" 
             :key="'prime-banner'">
@@ -29,12 +29,6 @@
 
 <style scoped>
 
-.banners-enter{
-  opacity:0;
-}
-.banners-enter-active{
-  transition:all 3s ease;
-}
 
 .prime-banner{
     position: fixed;

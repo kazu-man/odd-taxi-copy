@@ -10,7 +10,7 @@
 
         <MainContents />
 
-        <TopIcons />
+        <TopIcons />     
     </div>
     
 </template>

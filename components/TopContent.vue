@@ -1,6 +1,6 @@
 <template>
               
-    <div style="z-index:2;position:relative;pointer-events: none;" ref="test">
+    <div style="z-index:2;position:relative;pointer-events: none;" ref="cityBg">
         <img
             v-on:load="load"
             style="width:100%;"
@@ -14,16 +14,23 @@
             >
         </transition>
 
-
-        <!-- <transition-group name="banners" @enter="afterTitleAnimationEnter">
-                    <img
-                    v-if="cityImageFlg" 
-                    :key="'prime-banner'"
-                    class="prime-banner"
-                    src="/images/prime_bn_pc.png"
+        <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="icons">
+            <div v-if="cityImageFlg" class="thank-you" :key="'thank-you'">
+                <img
+                    
+                    style="width:100%"
+                    src="/images/thankyou_banner.png"
                 >
-                <SideOfficial v-if="cityImageFlg" :key="'side-official'"/>
-        </transition-group> -->
+            </div>
+
+            <div v-if="cityImageFlg" class="blueray-bunner" :key="'blueray-bunner'">
+                <img
+                    
+                    style="width:100%"
+                    src="/images/bluray_banner.png"
+                >
+            </div>
+        </transition-group>
 
     </div>
 
@@ -56,7 +63,7 @@
             this.odokawaFlg = true
         }    
         goto() {
-            this.imageElement = this.refs().test;
+            this.imageElement = this.refs().cityBg;
             console.log(this.imageElement);
             const imageBottom = this.imageElement.offsetHeight - window.innerHeight;
             console.log(imageBottom)
@@ -169,6 +176,40 @@
     bottom: -25%;
     left: -31%;
     z-index: 0;
+}
+
+.thank-you{
+    width: 30%;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    z-index: 0;   
+    cursor:pointer;
+    pointer-events:auto;
+}
+
+.thank-you:hover{
+    animation: wiggle .5s reverse;
+}
+
+.blueray-bunner{
+    width: 20%;
+    position: absolute;
+    top: 25%;
+    right: 20px;
+    z-index: 0;   
+    cursor:pointer;
+    pointer-events:auto;
+    animation: scale-down .2s;
+}
+
+.blueray-bunner:hover{
+    animation: scale-up .2s;
+    transform: scale(1.1);
+}
+
+.icons img:hover{
+    filter: brightness(1.1) !important;
 }
 
 </style>
