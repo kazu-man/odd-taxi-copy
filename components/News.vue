@@ -1,26 +1,32 @@
 <template>
-    <div class="news-main" style="height:1000px">
+    <CommonPartsTemplate >
+        <template v-slot:mainImage>
 
-        <transition name="book-banner">
-            <div class="book-banner" v-if="showFlg">
-                <img        
-                    src="/images/20210127_bn.png"
-                >   
-            </div>
-        </transition>
+            <img        
+                class="title"
+                src="/images/news.svg"
+            >  
+
+        </template>
         
-        <img        
-            id="news-title"
-            src="/images/news.svg"
-        >  
+        <template v-slot:content>
+            <transition name="book-banner">
+                <div class="book-banner" v-if="showFlg">
+                    <img        
+                        src="/images/20210127_bn.png"
+                    >   
+                </div>
+            </transition>
 
-        <NewsTable :newsData="newsData"/>
+            <NewsTable :newsData="newsData"/>
 
-        <div class="btn-area">
-            <CommonMoreBtn />
-        </div>
+            <div class="btn-area">
+                <CommonMoreBtn />
+            </div>
 
-    </div>
+        </template>
+
+    </CommonPartsTemplate>
 
 </template>
 
@@ -74,19 +80,7 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Yuji+Boku&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-.news-main{
-    position: relative;
-    width: 100%;
-    padding: 60px 0px 100px;
-    z-index: 1;
-}
 
-img#news-title{
-    display: block;
-    height: 255px;
-    margin: 0px auto;
-    max-width: 100%;
-}
 
 .book-banner{
     position:absolute;
