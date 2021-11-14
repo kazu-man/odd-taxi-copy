@@ -64,3 +64,15 @@
         transform: scale(1);
     }
 }
+
+@keyframes jump-up {
+    0% {
+        transform: translateY(50%);
+    }
+    80%{
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
