@@ -29,7 +29,7 @@
     width: 100%;
     padding: 60px 0px 100px;
     z-index: 1;
-    height:1000px;
+    height:auto;
 }
 img.title{
     display: block;

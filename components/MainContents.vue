@@ -6,7 +6,10 @@
                 <News />
             </div>
 
-            <div style="height:1000px" />
+            <div class="translucent-bg">
+                <About />
+            </div>
+
             <div class="black-bg" style="height:1000px" />
             <div style="height:1000px" />
             <div class="black-bg" style="height:1000px" />
@@ -50,6 +53,10 @@ p{
 
 .black-bg{
     background:black;
+}
+
+.translucent-bg{
+    background: rgb(12 12 12 / 30%);
 }
 
 </style>
