@@ -9,9 +9,9 @@
 
         </template>
         
-        <template v-slot:content>
-            <div class="about-content">
-                <AboutSvg />
+        <template v-slot:content >
+            <div class="about-content" ref="aboutContent">
+                <AboutSvg v-if="showFlg"/>
             </div>
         </template>
 
@@ -28,8 +28,30 @@
 
 
         mounted(){
-            this.showFlg = true;
+            
+            window.addEventListener('scroll', this.onScroll)
+
         }
+
+        refs():any {
+            return this.$refs;
+        }
+        
+        onScroll () {
+         const imageElement = this.refs().aboutContent;
+
+          const innerHeight = window.innerHeight 
+          const targetHeight = imageElement.getBoundingClientRect().top;
+
+          console.log(targetHeight)
+
+          if (targetHeight > 0 && targetHeight < (innerHeight * 0.8) && !this.showFlg) { 
+              console.log("show about")
+            this.showFlg = true;
+          }
+        }
+
+
     }
 </script>
 
@@ -37,6 +59,8 @@
     .about-content{
         margin-top:20px;
         padding:10px;
+        min-height:300px;
+
     }
 
 

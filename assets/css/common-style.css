@@ -1,8 +1,12 @@
-.fadein-enter{
+.fadein-enter, .fadein-2-enter{
     opacity:0;
   }
 .fadein-enter-active{
     transition:all 3s ease;
+}
+
+.fadein-2-enter-active{
+    transition:all 2s ease;
 }
 
 @keyframes bounce-in {

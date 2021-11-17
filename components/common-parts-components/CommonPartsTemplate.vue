@@ -1,10 +1,14 @@
 <template>
-    <div class="main">
+    <div ref="content" >
+        <transition name="fadein-2">
+            <div class="main" v-show="showFlg">
 
-        <slot name="mainImage"/>
+            <slot name="mainImage"/>
 
-        <slot name="content" />
+            <slot name="content" />
 
+            </div>
+        </transition>
     </div>
 
 </template>
@@ -16,9 +20,29 @@
     export default class News extends Vue {
         showFlg:boolean = false;
 
+        // mounted(){
+        //     this.showFlg = true;
+        // }
         mounted(){
-            this.showFlg = true;
+            window.addEventListener('scroll', this.onScroll)
+
         }
+
+        refs():any {
+            return this.$refs;
+        }
+        
+        onScroll () {
+         const imageElement = this.refs().content;
+
+          const innerHeight = window.innerHeight 
+          const targetHeight = imageElement.getBoundingClientRect().top;
+
+          if (targetHeight < (innerHeight * 0.8) && !this.showFlg) { 
+            this.showFlg = true;
+          }
+        }
+
     }
 </script>
 
