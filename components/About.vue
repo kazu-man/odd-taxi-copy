@@ -43,8 +43,6 @@
           const innerHeight = window.innerHeight 
           const targetHeight = imageElement.getBoundingClientRect().top;
 
-          console.log(targetHeight)
-
           if (targetHeight > 0 && targetHeight < (innerHeight * 0.8) && !this.showFlg) { 
               console.log("show about")
             this.showFlg = true;

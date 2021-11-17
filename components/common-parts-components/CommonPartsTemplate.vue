@@ -3,8 +3,9 @@
         <transition name="fadein-2">
             <div class="main" v-show="showFlg">
 
-            <slot name="mainImage"/>
-
+            <div class="mainImage">
+                <slot name="mainImage"/>
+            </div>
             <slot name="content" />
 
             </div>
@@ -60,5 +61,8 @@ img.title{
     height: 255px;
     margin: 0px auto;
     max-width: 100%;
+}
+.mainImage {
+    padding: 0 20%;
 }
 </style>
