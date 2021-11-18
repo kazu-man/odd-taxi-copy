@@ -73,8 +73,9 @@
 
           setTimeout(function(){
             console.log("scrollStart!!")
-
-            this.slowScrollTop()
+            if(this.onScrollFl){
+                this.slowScrollTop()
+            }
           }.bind(this), 3500);
 
         }
@@ -97,7 +98,7 @@
 
 
         scrollBg(){
-            if(this.titlePosition > 5){
+            if(this.titlePosition > 5 || !this.onScrollFlg){
                 this.titlePosition = this.titlePosition - this.goToTopRate;
                 const leftImageRate:number =  (this.titlePosition / this.imageSize) * 100;
                 

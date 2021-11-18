@@ -75,7 +75,7 @@
 </template>
 
  <script lang="ts">
- import { Vue, Component, Prop } from 'vue-property-decorator'
+ import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 
  interface User {
    familyName: string
@@ -96,7 +96,7 @@
 
     mounted() {
         this.flg = true
-        window.addEventListener('scroll', this.onScroll)
+        window.addEventListener('scroll', this.onScroll);
         setTimeout(function(){
             this.timerObj = setInterval(function() {this.count()}.bind(this), 10)
         }.bind(this), 2000);
@@ -106,6 +106,7 @@
         if(this.titlePosition > 10){
             this.titlePosition = this.titlePosition - 0.1;
         }else{
+          this.titlePosition = 10;
           clearInterval(this.timerObj);
         }
 
@@ -130,6 +131,13 @@
       this.titlePosition += (window.scrollY - this.lastY) / 10;
       this.lastY = window.scrollY;
     }
+
+    @Watch('titlePosition')
+    countByWatched(newVal, oldVal) {
+        if(newVal < 10){
+            this.titlePosition = 10
+        }
+    }    
 
  }
  </script>
