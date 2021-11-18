@@ -1,6 +1,8 @@
 <template>
 
-        <div class="main-content">
+        <div class="main-content" ref="goToTop">
+
+            <GoToTop :goToTopShowFlg="goToTopShowFlg"/>
 
             <div class="black-bg" >
                 <News />
@@ -24,6 +26,40 @@
 
  @Component
  export default class MainContents extends Vue {
+
+        goToTopShowFlg:boolean = false;
+
+        refs():any {
+            return this.$refs;
+        }
+
+        mounted(){
+            const imageElement = this.refs().goToTop;
+            window.addEventListener('scroll', this.onScroll)
+
+        }
+
+        onScroll(){
+            const imageElement = this.refs().goToTop;
+
+            const innerHeight = window.innerHeight 
+            const targetHeight = imageElement.getBoundingClientRect().top;
+
+            console.log("--------")
+            console.log(imageElement)
+            console.log(targetHeight)
+            console.log(targetHeight < innerHeight)
+            console.log("--------")
+
+            if (targetHeight < innerHeight) { 
+                this.goToTopShowFlg = true;
+                return;
+            }
+
+            this.goToTopShowFlg = false;
+
+        }
+        
 
     //computed
     // get titleHeight(){
@@ -58,5 +94,4 @@ p{
 .translucent-bg{
     background: rgb(12 12 12 / 30%);
 }
-
 </style>

@@ -80,3 +80,12 @@
         transform: translateY(0%);
     }
 }
+
+@keyframes move-from-bottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
