@@ -20,9 +20,7 @@
 
             <NewsTable :newsData="newsData"/>
 
-            <div class="btn-area">
-                <CommonMoreBtn />
-            </div>
+            <CommonMoreBtn />
 
         </template>
 
@@ -147,10 +145,5 @@
     line-height: 34px;
     display: block;
 }
-
-.btn-area{
-    margin-top:50px;
-}
-
 
 </style>

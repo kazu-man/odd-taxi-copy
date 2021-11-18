@@ -13,6 +13,9 @@
             <div class="about-content" ref="aboutContent">
                 <AboutSvg v-if="showFlg"/>
             </div>
+
+            <CommonMoreBtn />
+
         </template>
 
     </CommonPartsTemplate>

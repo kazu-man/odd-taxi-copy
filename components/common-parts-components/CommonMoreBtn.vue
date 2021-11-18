@@ -37,6 +37,7 @@
         user-select: none;
         cursor: pointer;
         margin:auto;
+        margin-top:50px;
     }
     .more-btn:hover{
         background: rgb(244, 95, 74) !important;
