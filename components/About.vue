@@ -1,13 +1,5 @@
 <template>
-    <CommonPartsTemplate >
-        <template v-slot:mainImage>
-
-            <img        
-                class="title"
-                src="/images/about-title.svg"
-            >  
-
-        </template>
+    <CommonPartsTemplate :imagePath="imagePath">
         
         <template v-slot:content >
             <div class="about-content" ref="aboutContent">
@@ -28,6 +20,7 @@
     @Component
     export default class About extends Vue {
         showFlg:boolean = false;
+        imagePath:string = "/images/about-title.svg";
 
 
         mounted(){

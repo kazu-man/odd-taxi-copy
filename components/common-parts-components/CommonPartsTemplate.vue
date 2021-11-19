@@ -3,10 +3,14 @@
         <transition name="fadein-2">
             <div class="main" v-show="showFlg">
 
-            <div class="mainImage">
-                <slot name="mainImage"/>
-            </div>
-            <slot name="content" />
+                <div class="mainImage" v-if="imagePath != null">
+                    <img        
+                        class="title"
+                        v-bind:src="imagePath"
+                    >  
+                </div>
+                
+                <slot name="content" />
 
             </div>
         </transition>
@@ -15,10 +19,14 @@
 </template>
 
  <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+    import { Vue, Component,Prop } from 'vue-property-decorator'
 
     @Component
     export default class News extends Vue {
+
+        @Prop({default:null})
+        imagePath:string;
+
         showFlg:boolean = false;
 
         // mounted(){

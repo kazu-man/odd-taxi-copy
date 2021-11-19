@@ -1,14 +1,6 @@
 <template>
-    <CommonPartsTemplate >
-        <template v-slot:mainImage>
+    <CommonPartsTemplate :imagePath="imagePath">
 
-            <img        
-                class="title"
-                src="/images/news.svg"
-            >  
-
-        </template>
-        
         <template v-slot:content>
             <transition name="book-banner">
                 <div class="book-banner" v-if="showFlg">
@@ -34,6 +26,7 @@
     @Component
     export default class News extends Vue {
         showFlg:boolean = false;
+        imagePath:string = '/images/news.svg';
 
         newsData:Object = [
             {
@@ -76,9 +69,6 @@
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Yuji+Boku&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-
 
 .book-banner{
     position:absolute;
@@ -132,18 +122,5 @@
     line-height: 27px;
 }
 
-.cunCrG {
-    font-family: Montserrat, sans-serif;
-    font-weight: 900;
-    font-size: 30px;
-    line-height: 28px;
-    border-right: 1px solid rgb(30, 91, 85);
-}
-
-.cunCrG strong {
-    font-size: 37px;
-    line-height: 34px;
-    display: block;
-}
 
 </style>
