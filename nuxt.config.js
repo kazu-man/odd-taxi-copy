@@ -38,7 +38,16 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/top-contents-components',
+      '~/components/main-contents-components',
+      '~/components/main-contents-components/about-components',
+      '~/components/main-contents-components/news-components',
+      '~/components/main-contents-components/character-components',
+    ]
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
