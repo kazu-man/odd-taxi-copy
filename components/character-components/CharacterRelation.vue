@@ -1,0 +1,151 @@
+<template>
+<div class="character-main" v-bind:style="{'height':imageHeight}">
+
+    <div class="middle-area">
+        <div class="middle-title">相関図</div>
+        <div class="middle-subtitle">写真クリックで人物紹介をご覧いただけます</div>
+    </div>
+    <div class="relation-pic-area">
+
+    <div class="relation-area">
+        <img        
+            ref="imageHeight"
+            class="title"
+            src="/images/character-relation.jpg"
+        >  
+    </div>
+
+
+    <div class="relation-area">
+
+        <svg version="1.1" id="character" x="0px" y="0px" viewBox="0 0 1081.2 1376.2" class="sc-eggNIi JiLrb">
+            <rect x="430.5" y="444.3" width="180.9" height="253.2" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="628.4" y="460.8" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="725.4" y="461.5" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="674.3" y="677.9" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="774.7" y="678.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="433.4" y="127.8" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="473.3" y="293.5" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="649.4" y="130.4" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="735.7" y="272.5" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="828.3" y="89.7" width="125" height="174.9" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="543.1" y="87.2" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="284.2" y="238.9" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="155.7" y="238.9" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="257.7" y="462.2" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="254.6" y="661.9" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="112.1" y="974.9" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="128.7" y="664.7" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="236.7" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="337.3" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="236.7" y="1090.2" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="337.3" y="1090.2" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="635.2" y="1067.3" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="765.5" y="1067.3" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="467.6" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="571.8" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="674.2" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+            <rect x="876.7" y="854.1" width="91" height="127.4" class="sc-cTkwdZ ejPiik"></rect>
+        </svg>
+    </div>
+    </div>
+
+</div>
+
+</template>
+
+ <script lang="ts">
+    import { Vue, Component } from 'vue-property-decorator'
+
+    @Component
+    export default class CharacterRelation extends Vue {
+
+       imageHeight:string = "100px";  
+
+       mounted(){
+            
+            window.addEventListener('scroll', this.onScroll)
+
+        }
+
+        refs():any {
+            return this.$refs;
+        }
+        
+        onScroll () {
+ 
+          const imageElement = this.refs().imageHeight;
+          const innerHeight = window.innerHeight 
+          const targetHeight = imageElement.getBoundingClientRect().top;
+
+          if (targetHeight > 0 && targetHeight < innerHeight ) { 
+            this.imageHeight = imageElement.clientHeight + 'px'
+            this.removeScrollListener()
+          }
+        }
+
+        removeScrollListener(){
+            window.removeEventListener('scroll', this.onScroll)
+        }
+
+    }
+</script>
+
+<style scoped >
+    svg{
+        width:100%;
+        height:100%;
+    }
+    svg rect{
+        cursor:pointer;
+        fill-opacity: 0;
+    }
+    svg rect:hover{
+        opacity: 1;
+        fill-opacity: 1;
+        fill: rgba(244, 92, 72, 0.2);
+        stroke: rgb(244, 95, 74);
+        stroke-width: 2;
+    }
+    .character-main{
+        position:relative;
+        margin:0 auto;
+        width:95%;
+    }
+    img{
+        width: 100%;
+    }
+
+    .relation-pic-area{
+        position: relative;
+    }
+
+    .relation-area{
+        position:absolute;
+        top:0;
+        width:100%;
+    }
+    .middle-area{
+        width:100%;
+        text-align:center;
+    }
+    .middle-title{
+        width:100%;
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: 900;
+        font-size: 45px;
+        margin-top: 50px;
+        color: rgb(244, 95, 74);
+        text-align: center;
+    }
+    .middle-subtitle{
+        width:100%;
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: 900;
+        font-size: 16px;
+        margin: 25px 0px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+</style>

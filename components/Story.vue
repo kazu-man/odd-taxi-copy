@@ -34,7 +34,7 @@
     import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class About extends Vue {
+    export default class Story extends Vue {
         showFlg:boolean = false;
         imagePath:string = "/images/story-title.svg";
 

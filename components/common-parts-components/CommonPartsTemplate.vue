@@ -3,7 +3,7 @@
         <transition name="fadein-2">
             <div class="main" v-show="showFlg">
 
-                <div class="mainImage" v-if="imagePath != null">
+                <div class="mainImage" v-bind:class="{imageFullWidth : imageFullWidthFlg}" v-if="imagePath != null">
                     <img        
                         class="title"
                         v-bind:src="imagePath"
@@ -26,6 +26,9 @@
 
         @Prop({default:null})
         imagePath:string;
+
+        @Prop({default:false, required:false})
+        imageFullWidthFlg:boolean;
 
         showFlg:boolean = false;
 
@@ -72,5 +75,8 @@ img.title{
 }
 .mainImage {
     padding: 0 20%;
+}
+.imageFullWidth{
+    padding:0;
 }
 </style>

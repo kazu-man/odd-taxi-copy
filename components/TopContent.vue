@@ -44,7 +44,7 @@
         cityImageFlg : boolean = false;
         odokawaFlg : boolean = false;
         //bgスクロールアニメーション関連
-        onScrollFlg:boolean = false;
+        onScrollFlg:boolean = true;
         titlePosition: number = 0;
         imageSize:number = 0;
         goToTopRate:number = 1;
@@ -58,22 +58,18 @@
 
         }
         load(){
-            console.log("loaded!!")
             this.goto()
             this.odokawaFlg = true
         }    
         goto() {
             this.imageElement = this.refs().cityBg;
-            console.log(this.imageElement);
             const imageBottom = this.imageElement.offsetHeight - window.innerHeight;
-            console.log(imageBottom)
             window.scrollTo(0, imageBottom);
             this.titlePosition = imageBottom;
             this.imageSize = imageBottom;
 
           setTimeout(function(){
-            console.log("scrollStart!!")
-            if(this.onScrollFl){
+            if(this.onScrollFlg){
                 this.slowScrollTop()
             }
           }.bind(this), 3500);
@@ -87,10 +83,8 @@
 
         onScroll () {
 
-          //bgのアニメーション中にしたスクローるされた場合、アニメーションをキャンセル
-          const currentPos = window.pageYOffset // スクロール量を取得
-          if (this.titlePosition < currentPos && this.onScrollFlg) { // スクロール量が最下部の位置を過ぎたかどうか
-            console.log('stop auto scroll')
+          const currentPos = window.pageYOffset 
+          if (this.titlePosition < currentPos && this.onScrollFlg) { 
             clearInterval(this.timerObj);
             this.onScrollFlg = false;
           }

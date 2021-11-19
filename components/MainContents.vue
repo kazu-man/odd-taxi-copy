@@ -16,8 +16,12 @@
                 <Story />
             </div>
 
-            <div style="height:1000px" />
+            <div class="translucent-bg">
+                <Character />
+            </div>
+
             <div class="black-bg" style="height:1000px" />
+            <div style="height:1000px" />
             <div class="black-bg" style="height:1000px" />
 
         </div>
@@ -48,12 +52,6 @@
 
             const innerHeight = window.innerHeight 
             const targetHeight = imageElement.getBoundingClientRect().top;
-
-            console.log("--------")
-            console.log(imageElement)
-            console.log(targetHeight)
-            console.log(targetHeight < innerHeight)
-            console.log("--------")
 
             if (targetHeight < innerHeight) { 
                 this.goToTopShowFlg = true;
