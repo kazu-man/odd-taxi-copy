@@ -24,9 +24,12 @@
                 <CastStaff />
             </div>
 
+            <div class="translucent-bg">
+                <DiscBook />
+            </div>
 
-            <div style="height:1000px" />
             <div class="black-bg" style="height:1000px" />
+            <div style="height:1000px" />
             <div class="black-bg" style="height:1000px" />
 
         </div>
