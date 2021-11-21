@@ -50,7 +50,7 @@
           const innerHeight = window.innerHeight 
           const targetHeight = imageElement.getBoundingClientRect().top;
 
-          if (targetHeight < (innerHeight * 0.8) && !this.showFlg) { 
+          if (targetHeight < innerHeight + 60 && !this.showFlg) { 
             this.showFlg = true;
           }
         }

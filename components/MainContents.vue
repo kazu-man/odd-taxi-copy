@@ -28,8 +28,12 @@
                 <DiscBook />
             </div>
 
-            <div class="black-bg" style="height:1000px" />
+            <div class="black-bg" >
+                <Goods />
+            </div>
+
             <div style="height:1000px" />
+            <div class="black-bg" style="height:1000px" />
             <div class="black-bg" style="height:1000px" />
 
         </div>

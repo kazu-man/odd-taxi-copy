@@ -1,7 +1,7 @@
 <template>
     <div class="disc-book-window">
 
-        <div class="content">   
+        <div class="content" v-bind:class="{slide :slideFlg}">   
             <img        
                 class="cast-image"
                 v-bind:src="data.imageUrl"
@@ -12,7 +12,7 @@
             {{data.imageTitle}}
         </div>
 
-        <div class="disc-sub-title">
+        <div class="disc-sub-title" v-if="data.imageSubTitle != null">
             {{data.imageSubTitle}}
         </div>
 
@@ -29,6 +29,8 @@
         @Prop({required:true,default:null})
         data:Object;
 
+        @Prop({required:false,default:false})
+        slideFlg:boolean;
 
     }
 </script>
@@ -64,6 +66,11 @@
     color: rgb(244, 95, 74);
     font-family: "Noto Sans JP", sans-serif;
     text-align: center;
+}
+
+.slide{
+    height: 100%;
+    width: 100%;
 }
 
 </style>
