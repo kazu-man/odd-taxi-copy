@@ -4,8 +4,8 @@
         
         <template v-slot:content >
 
-            <CommonCarousel :data="goodsData" :slideFlg="true"/>
-
+            <CommonCarousel :data="movieData" :movieFlg="true"/>
+            
             <CommonMoreBtn :marginTopNoneFlg="false"/>
 
         </template>
@@ -18,10 +18,10 @@
     import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class Goods extends Vue {
-        imagePath:string = "/images/goods-title.svg";
+    export default class Movie extends Vue {
+        imagePath:string = "/images/movie-title.svg";
 
-        goodsData:Object = [
+        movieData:Object = [
             {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",

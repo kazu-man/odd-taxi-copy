@@ -1,6 +1,6 @@
 <template>
 
-    <v-btn depressed class="more-btn">
+    <v-btn depressed class="more-btn" v-bind:class="{marginTop : marginTopNoneFlg}">
         More
     </v-btn>
 
@@ -12,6 +12,8 @@
     @Component
     export default class MoreBtn extends Vue {
 
+        @Prop({required:false,default:true})
+        marginTopNoneFlg:boolean;
 
     }
 </script>
@@ -37,12 +39,14 @@
         user-select: none;
         cursor: pointer;
         margin:auto;
-        margin-top:50px;
     }
     .more-btn:hover{
         background: rgb(244, 95, 74) !important;
         color: rgb(30, 91, 85);
 
+    }
+    .marginTop{
+        margin-top:50px;
     }
 
 </style>

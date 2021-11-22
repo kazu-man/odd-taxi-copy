@@ -1,10 +1,10 @@
 <template>
-    <div class="main-carousel" ref="cal">
-        <Carousel class="carousel" :perPage="2.5" :navigationEnabled="true" :paginationEnabled="false" :navigationNextLabel="'>'" :navigationPrevLabel="'<'">
+    <div class="main-carousel" ref="cal" v-bind:class="{movie : movieFlg}">
+        <Carousel v-if="carouselFlg" class="carousel" :perPage="carouselRatio" :navigationEnabled="movieFlg != true" :paginationEnabled="false" :navigationNextLabel="'>'" :navigationPrevLabel="'<'">
 
             <Slide v-for="(each, i) in data" :key="i">
                 <div class="label">
-                    <DiscBookWindow :data="each" :slideFlg="true"/>
+                    <DiscBookWindow :data="each" :slideFlg="slideFlg" :movieFlg="movieFlg"/>
                 </div>
             </Slide>
   
@@ -29,15 +29,30 @@
         @Prop({required:true,default:null})
         data:Object;
 
+        @Prop({required:false,default:false})
+        slideFlg:boolean;
+
+        @Prop({required:false,default:false})
+        movieFlg:boolean;
+
+        carouselFlg:boolean = true;
+
+        carouselRatio:number = 1.5;
+
+
         mounted(){
             window.addEventListener('scroll', this.onScroll)
-
+            window.addEventListener('resize', this.resize)
         }
 
         refs():any {
             return this.$refs;
         }
-        
+
+        resize(){
+            this.carouselRatio =  window.innerWidth  < 768 ? 1.5 : this.movieFlg ? 3.5 : 2.5;
+        }
+
         onScroll () {
           const imageElement = this.refs().cal;
           const targetHeight = imageElement.getBoundingClientRect().top;
@@ -52,6 +67,24 @@
             window.removeEventListener('scroll', this.onScroll)
         }
 
+        //画面サイズに応じて表示画像数を変更するため、一度flgをfalseにする
+        @Watch("carouselRatio")
+        changeFlgFalse(newVal,oldVal){
+
+            this.carouselFlg = false;
+
+        }
+
+        //表示画像数を変更する際、一度flgをfalseにしたのちtrueに戻す
+        @Watch("carouselFlg")
+        changeFlgTrue(newVal,oldVal){
+
+            if(!this.carouselFlg){
+                this.carouselFlg = true;
+            }
+
+        }
+
     }
 </script>
 
@@ -60,6 +93,7 @@
 .main-carousel{
     width:100%;
     padding:0 5%;
+    margin-top:40px;
 }
 .carousel{
     width:100%;    
@@ -72,6 +106,10 @@
   font-size: 24px;
   text-align: center;
   min-height: 375px;
+}
+
+.movie .VueCarousel-slide{
+  min-height: 275px;
 }
 
 .label {
