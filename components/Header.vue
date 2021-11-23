@@ -186,6 +186,9 @@ export default {
     }
     .eMijpD {
         fill: rgb(88, 88, 88);
+        cursor: pointer;
+        stroke: transparent;
+        stroke-width: 8px !important;
     }
     .jHlPUB:hover path.icon {
         fill: rgb(30, 91, 85);

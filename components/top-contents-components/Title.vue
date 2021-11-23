@@ -85,9 +85,10 @@
  @Component
  export default class Title extends Vue {
     flg: boolean = false;
-    titlePosition: number = 40;
+    titlePosition: number = 30;
     lastY:number = 0;
     timerObj:number = null;
+    titleTopPosition:number = 5;
 
 
     get titleHeight(){
@@ -103,10 +104,10 @@
 
     }
     count(){
-        if(this.titlePosition > 10){
+        if(this.titlePosition > this.titleTopPosition){
             this.titlePosition = this.titlePosition - 0.1;
         }else{
-          this.titlePosition = 10;
+          this.titlePosition = this.titleTopPosition;
           clearInterval(this.timerObj);
         }
 
@@ -134,8 +135,8 @@
 
     @Watch('titlePosition')
     countByWatched(newVal, oldVal) {
-        if(newVal < 10){
-            this.titlePosition = 10
+        if(newVal < this.titleTopPosition){
+            this.titlePosition = this.titleTopPosition
         }
     }    
 

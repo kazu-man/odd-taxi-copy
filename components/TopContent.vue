@@ -72,7 +72,7 @@
             if(this.onScrollFlg){
                 this.slowScrollTop()
             }
-          }.bind(this), 3500);
+          }.bind(this), 3000);
 
         }
 
