@@ -36,10 +36,6 @@
                 <Movie />
             </div>
 
-            <div style="height:1000px" />
-            <div class="black-bg" style="height:1000px" />
-            <div class="black-bg" style="height:1000px" />
-
         </div>
 
 </template>
