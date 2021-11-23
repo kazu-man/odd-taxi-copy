@@ -144,7 +144,7 @@
     text-align:center;
 }
 
-.footer-bottom svg{
+svg{
     width:100%;
 }
 .footer-bottom path,
