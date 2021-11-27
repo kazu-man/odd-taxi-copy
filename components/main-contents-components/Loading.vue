@@ -100,10 +100,10 @@ img.loading-title{
     transform: translateX(-120px);
 }
 
-@media screen and (max-width: 414px) {
-  .car {
-    padding-top:60px;
-  }
-}
+        @media screen and (max-width: 414px) {
+        .car {
+            padding-top:60px;
+        }
+        }
 
 </style>
