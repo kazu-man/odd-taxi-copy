@@ -28,7 +28,7 @@
       app
       color="black"
     >
-        <div class="header-icons">
+        <div class="header-icons pc">
             <svg id="header_share.svg" data-name="header/share.svg" xmlns="http://www.w3.org/2000/svg" width="120.813" height="29" viewBox="0 0 120.813 29" class="sc-eUWgFQ hcHFJT">
                 <path id="SHARE" d="M87.86,36.468c2.614,0,3.927-1.3,3.927-2.831,0-3.1-4.662-2.256-4.662-3.263,0-.288.265-0.528,1.1-0.528a5.218,5.218,0,0,1,2.349.624l0.855-2.052a6.717,6.717,0,0,0-3.18-.732c-2.614,0-3.927,1.272-3.927,2.831,0,3.131,4.662,2.279,4.662,3.335,0,0.288-.289.456-1.1,0.456a5.8,5.8,0,0,1-2.783-.768L84.186,35.6A7.581,7.581,0,0,0,87.86,36.468Zm11.308-8.59v2.975H96.543V27.878H93.7v8.4h2.843v-3.1h2.626v3.1h2.843v-8.4H99.169Zm11.493,8.4h2.94l-3.687-8.4h-2.8l-3.686,8.4h2.891l0.566-1.464h3.2Zm-2.987-3.5,0.819-2.112,0.819,2.112h-1.638Zm12.372,3.5h3.036l-1.771-2.591a2.811,2.811,0,0,0,1.59-2.64c0-1.944-1.493-3.167-3.843-3.167H115v8.4h2.843V34.165h0.771Zm-0.012-5.231a0.967,0.967,0,0,1-1.156.984h-1.036V30.062h1.036A0.967,0.967,0,0,1,120.035,31.045Zm7.854,3.1v-1.1h3.566V31h-3.566V30.014h4.06V27.878h-6.855v8.4H132.1V34.141h-4.216Z" transform="translate(-84.188 -18)" class="sc-hxqDJO emWfRI"></path>
                 <g class="sc-gATInX jHlPUB">
@@ -47,7 +47,7 @@
             >
         </div>
         <transition name="onAir" @enter="afterTitleAnimationEnter">
-        <div class="on-air" v-if="onairFlg">
+        <div class="on-air pc" v-if="onairFlg">
             <img
                 src="/images/onair_btn.png"
             >

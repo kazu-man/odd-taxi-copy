@@ -8,7 +8,12 @@
           <div class="greenBg">
                 <Title />
                 <TopContent @loaderOff="loaderOff" />
+
           </div>
+          <div class="sp" v-if="animeDone">
+            <SpBanners />
+          </div>
+
 
           <MainContents />
 

@@ -3,7 +3,7 @@
 
         <template v-slot:content>
             <transition name="book-banner">
-                <div class="book-banner" v-if="showFlg">
+                <div class="book-banner pc" v-if="showFlg">
                     <img        
                         src="/images/20210127_bn.png"
                     >   

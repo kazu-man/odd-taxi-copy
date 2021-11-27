@@ -23,7 +23,7 @@
                 >
             </div>
 
-            <div v-if="cityImageFlg" class="blueray-bunner" :key="'blueray-bunner'">
+            <div v-if="cityImageFlg" class="blueray-banner" :key="'blueray-banner'">
                 <img
                     
                     style="width:100%"
@@ -189,7 +189,7 @@
     animation: wiggle .5s reverse;
 }
 
-.blueray-bunner{
+.blueray-banner{
     width: 20%;
     position: absolute;
     top: 25%;
@@ -200,7 +200,7 @@
     animation: scale-down .2s;
 }
 
-.blueray-bunner:hover{
+.blueray-banner:hover{
     animation: scale-up .2s;
     transform: scale(1.1);
 }
@@ -208,5 +208,23 @@
 .icons img:hover{
     filter: brightness(1.1) !important;
 }
+
+
+@media screen and (max-width: 414px) {
+    .icons {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 170px;
+    }
+    .thank-you{
+        width:45%;
+        left: 5px;
+    }
+    .blueray-banner{
+        width:45%;
+        right: 5px;
+    }
+  }
 
 </style>

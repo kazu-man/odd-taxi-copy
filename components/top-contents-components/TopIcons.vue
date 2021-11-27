@@ -1,7 +1,7 @@
 <template>
 
     <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="top-icons">
-        <div class="prime-banner"
+        <div class="prime-banner pc"
             v-if="cityImageFlg" 
             :key="'prime-banner'">
                 <img
