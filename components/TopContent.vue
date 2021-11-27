@@ -68,9 +68,11 @@
             this.titlePosition = imageBottom;
             this.imageSize = imageBottom;
 
+            this.$emit("loaderOff")
+
           setTimeout(function(){
-            if(this.onScrollFlg){
-                this.slowScrollTop()
+              if(this.onScrollFlg){
+                  this.slowScrollTop()
             }
           }.bind(this), 3000);
 

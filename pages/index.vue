@@ -1,16 +1,19 @@
 <template>
-    <div id="top" v-cloak>
+    <div id="top" >
 
-        <div class="mainBg" />
+       <Loading v-if="loadingFlg" @finishLoader="finishLoader"/>
+        <div v-if="animeDone">
+          <div class="mainBg" />
 
-        <div class="greenBg">
-              <Title/>
-              <TopContent />
-        </div>
+          <div class="greenBg">
+                <Title />
+                <TopContent @loaderOff="loaderOff" />
+          </div>
 
-        <MainContents />
+          <MainContents />
 
-        <TopIcons />     
+          <TopIcons />  
+        </div>   
     </div>
     
 </template>
@@ -19,6 +22,16 @@
 
     @Component 
     export default class Index extends Vue {
+
+      loadingFlg:boolean = true;
+      animeDone:boolean = false;
+
+      finishLoader(){
+        this.animeDone = true;
+      }
+      loaderOff(){
+        this.loadingFlg = false;
+      }
     }
 </script>
 
