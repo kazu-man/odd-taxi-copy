@@ -117,16 +117,16 @@
         el.style.transitionDelay = 3000 + 'ms'
     }
     subTitleEnter(el) {
-        el.style.transitionDelay = 4000 + 'ms'
-    }
-    officialTitleEnter(el) {
         el.style.transitionDelay = 5000 + 'ms'
     }
+    officialTitleEnter(el) {
+        el.style.transitionDelay = 6000 + 'ms'
+    }
     carTitleEnter(el) {
-        el.style.transitionDelay = 5500 + 'ms'
+        el.style.transitionDelay = 6500 + 'ms'
     }
     scrollTitleEnter(el) {
-        el.style.transitionDelay = 6000 + 'ms'
+        el.style.transitionDelay = 7000 + 'ms'
     }
     onScroll () {
       this.titlePosition += (window.scrollY - this.lastY) / 10;
@@ -191,15 +191,15 @@
 
 svg #twitter {
   transform:translate(-3638px, -430px);
-  animation: twitter 6.5s ease;
+  animation: twitter 7.5s ease;
 }
 svg #instagram {
   transform:translate(-3638px, -430px);
-  animation: instagram 6.5s ease;
+  animation: instagram 7.5s ease;
 }
 svg #tiktok {
   transform:translate(-3638px, -430px);
-  animation: tiktok 6.5s ease;
+  animation: tiktok 7.5s ease;
 }
 
 svg .arrow-1{
