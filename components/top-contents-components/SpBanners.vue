@@ -1,26 +1,24 @@
 <template>
         <div class="sp-content">
             <transition-group name="sp-content" >
-            <img
-                :key="'onair'"
-                v-if="showFlg" 
-                src="/images/onair_btn_sp.png"
-                class="onair"
-            >
+                <div v-if="showFlg" class="onair" :key="'onair'">
+                    <img
+                        src="/images/onair_btn_sp.png"
+                        
+                    >
+                </div>
+                <div v-if="showFlg" class="prime" :key="'prime'">
 
-            <img
-                :key="'prime'"
-                v-if="showFlg" 
-                src="/images/prime_bn_pc.png"
-                class="prime"
-            >
+                    <img
+                        src="/images/prime_bn_pc.png"
+                    >
+                </div>
+                <div v-if="showFlg" class="book" :key="'book'">
+                    <img
+                        src="/images/20210127_bn.png"
+                    >
+                </div>
 
-            <img
-                :key="'book'"
-                v-if="showFlg" 
-                src="/images/20210127_bn.png"
-                class="book"
-            >
         
             </transition-group>
         </div>
@@ -65,7 +63,9 @@ img{
     height: 42px;
     margin-top: -15px;
 }
-
+.onair img{
+    margin-top: -15px;
+}
 .prime{
     height: 71px;
     margin:20px 0;
@@ -81,5 +81,7 @@ img{
     animation: jump-up 2s;
     transition:opacity 2s ease;
 }
-
+img{
+    height:100%;
+}
 </style>

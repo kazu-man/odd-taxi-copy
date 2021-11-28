@@ -1,6 +1,6 @@
 <template>
     <div class="main-carousel" ref="cal" v-bind:class="{movie : movieFlg}">
-        <Carousel v-if="carouselFlg" class="carousel" :perPage="carouselRatio" :navigationEnabled="movieFlg != true" :paginationEnabled="false" :navigationNextLabel="'>'" :navigationPrevLabel="'<'">
+        <Carousel v-if="carouselFlg" class="carousel" :perPage="carouselRatio" :navigationEnabled="!movieFlg" :paginationEnabled="false" :navigationNextLabel="'>'" :navigationPrevLabel="'<'">
 
             <Slide v-for="(each, i) in data" :key="i">
                 <div class="label">
@@ -91,9 +91,10 @@
 <style scoped>
 
 .main-carousel{
-    width:100%;
+    width:90%;
     padding:0 5%;
     margin-top:40px;
+    margin: auto;
 }
 .carousel{
     width:100%;    

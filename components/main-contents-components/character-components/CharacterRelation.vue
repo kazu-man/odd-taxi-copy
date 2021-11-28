@@ -147,5 +147,11 @@
         color: rgb(255, 255, 255);
         text-align: center;
     }
+    @media screen and (max-width: 767px){
 
+        .middle-title{
+            padding-top:0;   
+        }
+
+    }
 </style>

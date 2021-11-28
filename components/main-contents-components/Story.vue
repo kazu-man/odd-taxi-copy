@@ -10,16 +10,16 @@
 
             <div class="story-plot">
                 平凡な毎日を送るタクシー運転手・小戸川。<br />
-                身寄りはなく、他人とあまり関わらない、少し偏屈で無口な変わり者。<br />
+                身寄りはなく、他人とあまり関わらない、<br class="sp" />少し偏屈で無口な変わり者。<br />
                 趣味は寝る前に聞く落語と仕事中に聞くラジオ。<br />
-                一応、友人と呼べるのはかかりつけでもある医者の剛力と、高校からの同級生、柿花ぐらい。<br />
+                一応、友人と呼べるのはかかりつけでもある医者の剛力と、<br class="sp" />高校からの同級生、柿花ぐらい。<br />
                 彼が運ぶのは、どこかクセのある客ばかり。
                 <br />
                 <br />
-                バズりたくてしょうがない大学生・樺沢、何かを隠す看護師・白川、<br />
+                バズりたくてしょうがない大学生・樺沢、<br class="sp" />何かを隠す看護師・白川、<br />
                 いまいち売れない芸人コンビ・ホモサピエンス、<br />
-                街のゴロツキ・ドブ、売出し中のアイドル・ミステリーキッス…<br />
-                何でも無いはずの人々の会話は、やがて失踪した1人の少女へと繋がっていく。
+                街のゴロツキ・ドブ、<br class="sp" />売出し中のアイドル・ミステリーキッス…<br />
+                何でも無いはずの人々の会話は、<br class="sp" />やがて失踪した1人の少女へと繋がっていく。
             </div>
 
             <CommonMoreBtn />
@@ -62,6 +62,24 @@
         line-height: 28px;
         padding:10px 0;
         font-family: "Noto Sans JP", sans-serif;
+    }
+
+    @media screen and (max-width: 767px){
+        .story-subtitle h2 {
+            font-size: 20px;
+            line-height: 30px;
+            margin:0px;
+        }
+
+        .story-subtitle h2{
+            padding: 0px 5% 10px 5%;
+        }
+
+        .story-plot{
+            font-size: 13px;
+            line-height: 22px;
+            margin: 0px -5px;
+        }
     }
 
 

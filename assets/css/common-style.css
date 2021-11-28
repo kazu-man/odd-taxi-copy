@@ -93,15 +93,14 @@
         transform: translateY(0%);
     }
 }
-.sp {
-    display:none;
+@media screen and (min-width: 415px) {
+    .sp {
+        display:none;
+    }
 }
 
 @media screen and (max-width: 414px) {
-    .sp {
-        display:initial;
-    }
     .pc {
         display:none;
     }
-  }
+}

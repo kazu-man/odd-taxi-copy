@@ -108,4 +108,7 @@ p{
 .translucent-bg{
     background: rgb(12 12 12 / 30%);
 }
+.black-bg,.translucent-bg{
+    min-height:400px;
+}
 </style>

@@ -69,8 +69,7 @@
 }
 img.title{
     display: block;
-    height: 255px;
-    margin: 0px auto;
+    margin: 0px auto 30px auto;
     max-width: 100%;
 }
 .mainImage {

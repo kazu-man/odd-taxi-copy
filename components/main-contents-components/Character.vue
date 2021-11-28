@@ -44,6 +44,4 @@
         padding:10px 0;
         font-family: "Noto Sans JP", sans-serif;
     }
-
-
 </style>

@@ -89,38 +89,4 @@
     filter: brightness(1.1) !important;
 }
 
-.news-table{
-    width:100%;
-    margin: 40px 2% 0px 2%;
-    position:relative;
-    border-bottom: 1px solid rgb(30, 91, 85);
-}
-
-.news-row{
-    width:100%;
-    height:auto;
-    border-top: 1px solid rgb(30, 91, 85);
-    margin:2px 0;
-    padding: 10px 70px;
-    color: rgb(244, 95, 74);
-    align-items: center;
-    cursor:pointer;
-}
-
-.news-row:hover{
-    color: rgb(30, 91, 85);
-}
-
-.news-row-head{
-    margin:5px 0;
-}
-.news-row-body{
-    padding-left:20px !important;
-    font-family: Roboto, sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 27px;
-}
-
-
 </style>

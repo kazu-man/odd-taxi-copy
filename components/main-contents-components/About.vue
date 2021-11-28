@@ -52,8 +52,6 @@
     .about-content{
         margin-top:20px;
         padding:10px;
-        min-height:300px;
-
     }
 
 

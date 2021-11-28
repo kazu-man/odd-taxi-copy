@@ -30,7 +30,7 @@
 <style scoped>
 
 .news-table{
-    width:100%;
+    width:95%;
     margin: 40px 2% 0px 2%;
     position:relative;
     border-bottom: 1px solid rgb(30, 91, 85);
@@ -74,6 +74,36 @@
     font-size: 37px;
     line-height: 34px;
     display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .cunCrG {
+        font-weight: 900;
+        font-size: 24px;
+    }
+     .cunCrG strong{
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .news-row{
+        padding: 5px 5px;
+    }
+    .cunCrG {
+        font-weight: 900;
+        font-size: 18px;
+    }
+     .cunCrG strong{
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .news-row-body{
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 14px;
+    }
 }
 
 </style>
