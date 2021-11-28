@@ -1,6 +1,6 @@
 <template>
     <div class="main-carousel" ref="cal" v-bind:class="{movie : movieFlg}">
-        <Carousel v-if="carouselFlg" class="carousel" :perPage="carouselRatio" :navigationEnabled="!movieFlg" :paginationEnabled="false" :navigationNextLabel="'>'" :navigationPrevLabel="'<'">
+        <Carousel v-if="carouselFlg" class="carousel" :perPage="carouselRatio" :navigationEnabled="true" :paginationEnabled="false" :navigationNextLabel="movieFlg ? '' : '>'" :navigationPrevLabel="movieFlg ? '' : '<'">
 
             <Slide v-for="(each, i) in data" :key="i">
                 <div class="label">
