@@ -49,8 +49,8 @@ svg{
 
 #goToTop{
     position:fixed;
-    right:0;
-    bottom:0;
+    right:10px;
+    bottom:10px;
     z-index:9;
 }
 
