@@ -106,7 +106,7 @@
                 //5%以上スクロールが進んだら加速開始
                 }else if(leftImageRate > 10){
 
-                  this.goToTopRate *= 1.03;
+                  this.goToTopRate *= 1.05;
 
                 }
 

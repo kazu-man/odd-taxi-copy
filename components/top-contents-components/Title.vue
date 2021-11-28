@@ -111,7 +111,7 @@
         window.addEventListener('scroll', this.onScroll);
         setTimeout(function(){
             this.timerObj = setInterval(function() {this.count()}.bind(this), 10)
-        }.bind(this), 2000);
+        }.bind(this), 1500);
 
     }
     count(){
@@ -131,7 +131,7 @@
         el.style.transitionDelay = 5000 + 'ms'
     }
     officialTitleEnter(el) {
-        el.style.transitionDelay = 6000 + 'ms'
+        el.style.transitionDelay = 5500 + 'ms'
     }
     carTitleEnter(el) {
         el.style.transitionDelay = 6500 + 'ms'
