@@ -60,7 +60,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    ['vue-scrollto/nuxt', { lazy: false }]
+    ['vue-scrollto/nuxt', { lazy: false, duration:1000, easing:'ease-in-out' }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

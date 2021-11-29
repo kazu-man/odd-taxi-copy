@@ -47,7 +47,7 @@
             >
         </div>
         <transition name="onAir" @enter="afterTitleAnimationEnter">
-        <div class="on-air pc" v-if="onairFlg">
+        <div class="on-air pc" v-if="onairFlg" v-scroll-to="'#footer'">
             <img
                 src="/images/onair_btn.png"
             >
