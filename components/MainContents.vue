@@ -4,35 +4,35 @@
 
             <GoToTop :goToTopShowFlg="goToTopShowFlg"/>
 
-            <div class="black-bg" >
+            <div id="news" class="black-bg" >
                 <News />
             </div>
 
-            <div class="translucent-bg">
+            <div id="about" class="translucent-bg">
                 <About />
             </div>
 
-            <div class="black-bg" >
+            <div id="story" class="black-bg" >
                 <Story />
             </div>
 
-            <div class="translucent-bg">
+            <div id="character" class="translucent-bg">
                 <Character />
             </div>
 
-            <div class="black-bg" >
+            <div id="castStaff" class="black-bg" >
                 <CastStaff />
             </div>
 
-            <div class="translucent-bg">
+            <div id="discBook" class="translucent-bg">
                 <DiscBook />
             </div>
 
-            <div class="black-bg" >
+            <div id="goods" class="black-bg" >
                 <Goods />
             </div>
 
-            <div class="translucent-bg">
+            <div id="movie" class="translucent-bg">
                 <Movie />
             </div>
 
