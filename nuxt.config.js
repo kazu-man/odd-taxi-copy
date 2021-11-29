@@ -32,7 +32,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue-scrollto',
     '~/plugins/mixin'
     // { src: '@/plugins/mixin' },
   ],
@@ -61,7 +60,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'vue-scrollto/nuxt',
+    ['vue-scrollto/nuxt', { lazy: false }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
