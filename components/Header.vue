@@ -43,6 +43,7 @@
         </div>
         <div class="header-logo">
             <img
+                v-scroll-to="'#top'"
                 src="/images/header-logo.svg"
             >
         </div>
