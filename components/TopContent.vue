@@ -15,7 +15,7 @@
         </transition>
 
         <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="icons">
-            <div v-if="cityImageFlg" class="thank-you" :key="'thank-you'">
+            <div v-if="topScrollDoneFlg" class="thank-you" :key="'thank-you'">
                 <img
                     
                     style="width:100%"
@@ -23,7 +23,7 @@
                 >
             </div>
 
-            <div v-if="cityImageFlg" class="blueray-banner" :key="'blueray-banner'">
+            <div v-if="topScrollDoneFlg" class="blueray-banner" :key="'blueray-banner'">
                 <img
                     
                     style="width:100%"
@@ -41,7 +41,6 @@
 
     @Component 
     export default class TopContent extends Vue {
-        cityImageFlg : boolean = false;
         odokawaFlg : boolean = false;
         //bgスクロールアニメーション関連
         onScrollFlg:boolean = true;
@@ -53,7 +52,6 @@
         imageElement:any = null;
 
         mounted(){
-            this.cityImageFlg = true
             window.addEventListener('scroll', this.onScroll)
 
         }
@@ -129,6 +127,13 @@
 
         odokawaEnter(el) {
             el.style.transitionDelay = 100 + 'ms'
+        }
+
+        @Watch("onScrollFlg")
+        onScrollByWatch(newVal, oldVal) {
+            if(!newVal){
+                this.$store.commit("store/setTopScrollDoneFlg",true);
+            }
         }
     }
 </script>

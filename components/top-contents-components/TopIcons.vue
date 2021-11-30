@@ -2,28 +2,26 @@
 
     <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="top-icons">
         <div class="prime-banner pc"
-            v-if="cityImageFlg" 
+            v-if="topScrollDoneFlg" 
             :key="'prime-banner'">
                 <img
                 src="/images/prime_bn_pc.png"
             >
         </div>
-            <SideOfficial v-if="cityImageFlg" :key="'side-official'"/>
+
+        <SideOfficial v-if="topScrollDoneFlg" :key="'side-official'"/>
+
     </transition-group>
 
 </template>
 
 <script lang="ts">
-    import {Component, Vue, Watch} from "nuxt-property-decorator";
+    import {Component, Vue, Prop} from "nuxt-property-decorator";
 
     @Component 
     export default class TopIcons extends Vue {
 
-      cityImageFlg:boolean = false;
 
-      mounted(){
-        this.cityImageFlg = true;
-      }
     }
 </script>
 

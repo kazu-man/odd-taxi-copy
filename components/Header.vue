@@ -48,7 +48,7 @@
             >
         </div>
         <transition name="onAir" @enter="afterTitleAnimationEnter">
-        <div class="on-air pc" v-if="onairFlg" v-scroll-to="'#footer'">
+        <div class="on-air pc" v-if="topScrollDoneFlg" v-scroll-to="'#footer'">
             <img
                 src="/images/onair_btn.png"
             >
@@ -182,11 +182,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js',
-      onairFlg:false
     }
-  },
-  mounted:function(){
-      this.onairFlg = true
   },
   methods:{
       moveTo(target){

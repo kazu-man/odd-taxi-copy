@@ -11,7 +11,7 @@
 
     <transition name="sub-title" mode="out-in" @enter="subTitleEnter">
         <img
-            v-if="flg"
+            v-if="topScrollDoneFlg"
             style="width:50%"
             src="/images/copy.svg"
             class="pc"
@@ -20,7 +20,7 @@
 
     <transition name="sub-title" mode="out-in" @enter="subTitleEnter">
         <img
-            v-if="flg"
+            v-if="topScrollDoneFlg"
             style="height: 150px;"
             src="/images/copy_sp_responsive.svg"
             class="sp"
@@ -29,7 +29,7 @@
 
     <transition name="main-title" mode="out-in" @enter="officialTitleEnter">
 
-        <div style="text-align:center" v-if="flg" class="pc">
+        <div style="text-align:center" v-if="topScrollDoneFlg" class="pc">
             <svg id="mainvisual_sns.svg" data-name="mainvisual/sns.svg" xmlns="http://www.w3.org/2000/svg" width="181" height="74" viewBox="0 0 181 74" class="sc-fubCfw irPtrP" style="padding: 0 3%;">
                 <path id="twitter" d="M3700.08,460.067a3.26,3.26,0,0,1,2.42,1.012,3.346,3.346,0,0,1,1,2.455v25.412a3.348,3.348,0,0,1-1,2.455,3.263,3.263,0,0,1-2.42,1.011h-25.13a3.269,3.269,0,0,1-2.43-1.011,3.348,3.348,0,0,1-1-2.455V463.534a3.346,3.346,0,0,1,1-2.455,3.266,3.266,0,0,1,2.43-1.012h25.13Zm-3.5,11.481a10.4,10.4,0,0,0,2.35-2.455,9.385,9.385,0,0,1-2.71.722,4.836,4.836,0,0,0,2.07-2.6,8.769,8.769,0,0,1-3,1.155,4.311,4.311,0,0,0-3.35-1.515,4.585,4.585,0,0,0-2.61.794,4.8,4.8,0,0,0-1.75,2.129,4.661,4.661,0,0,0-.21,2.925,12.7,12.7,0,0,1-5.43-1.482,14.161,14.161,0,0,1-4.28-3.5,4.493,4.493,0,0,0-.64,2.345,4.749,4.749,0,0,0,.57,2.31,4.6,4.6,0,0,0,1.57,1.7,4.821,4.821,0,0,1-2.14-.649V473.5a4.593,4.593,0,0,0,1.07,3.033,4.753,4.753,0,0,0,2.71,1.662,6.36,6.36,0,0,1-2.14.07,4.371,4.371,0,0,0,1.64,2.347,4.426,4.426,0,0,0,2.71.9,9.1,9.1,0,0,1-5.78,2.022h-1.14a13.086,13.086,0,0,0,18.99-5.127,13.99,13.99,0,0,0,1.5-6.28v-0.577Z"  class="sc-pFZIQ gbgfMs"></path>
                 <path id="instagram" d="M3732.65,476.19a3.545,3.545,0,1,1-3.54-3.583A3.559,3.559,0,0,1,3732.65,476.19Zm5.12-4.344c0.05,1.134.06,1.474,0.06,4.344s-0.01,3.211-.06,4.344c-0.14,2.891-1.48,4.278-4.36,4.408-1.12.053-1.46,0.064-4.3,0.064s-3.18-.011-4.3-0.064c-2.89-.132-4.22-1.519-4.36-4.408-0.05-1.133-.06-1.473-0.06-4.344s0.01-3.21.06-4.344c0.14-2.892,1.48-4.275,4.36-4.408,1.12-.052,1.46-0.061,4.3-0.061s3.18,0.009,4.3.061C3736.29,467.571,3737.63,468.954,3737.77,471.846Zm-3.2,4.344a5.46,5.46,0,1,0-5.46,5.523A5.494,5.494,0,0,0,3734.57,476.19Zm1.49-5.739a1.275,1.275,0,1,0-1.27,1.29A1.281,1.281,0,0,0,3736.06,470.451Zm9-6.362v24.2a4,4,0,0,1-3.98,4.025h-23.94a4,4,0,0,1-3.98-4.025v-24.2a4,4,0,0,1,3.98-4.027h23.94A4,4,0,0,1,3745.06,464.089Zm-5.32,12.1c0-2.919-.01-3.286-0.06-4.432-0.18-3.9-2.32-6.076-6.19-6.254-1.13-.054-1.49-0.065-4.38-0.065s-3.25.011-4.38,0.065c-3.87.178-6.01,2.344-6.19,6.254-0.05,1.146-.06,1.513-0.06,4.432s0.01,3.287.06,4.433c0.18,3.906,2.32,6.076,6.19,6.255,1.13,0.05,1.49.064,4.38,0.064s3.25-.014,4.38-0.064c3.86-.179,6.01-2.345,6.19-6.255C3739.73,479.477,3739.74,479.111,3739.74,476.19Z" class="sc-pFZIQ gbgfMs"></path>
@@ -43,7 +43,7 @@
 
     <transition name="main-title" mode="out-in" @enter="carTitleEnter">
         <img
-            v-if="flg"
+            v-if="topScrollDoneFlg"
             style="width:10%"
             src="/images/taxi.svg"
             class="pc"
@@ -52,7 +52,7 @@
 
     <transition name="main-title" mode="out-in" @enter="scrollTitleEnter">
 
-        <svg class="pc" v-if="flg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 72" width="230" height="72" preserveAspectRatio="xMidYMid meet" style="width: 100%; transform: translate3d(0px, 0px, 0px);padding:0 35%;">
+        <svg class="pc" v-if="topScrollDoneFlg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 72" width="230" height="72" preserveAspectRatio="xMidYMid meet" style="width: 100%; transform: translate3d(0px, 0px, 0px);padding:0 35%;">
             <defs>
                 <clipPath id="__lottie_element_10">
                 <rect width="230" height="72" x="0" y="0"></rect>
@@ -125,19 +125,19 @@
     }
     //methods
     mainTitleEnter(el) {
-        el.style.transitionDelay = 3000 + 'ms'
+        el.style.transitionDelay = 500 + 'ms'
     }
     subTitleEnter(el) {
-        el.style.transitionDelay = 5000 + 'ms'
+        el.style.transitionDelay = 500 + 'ms'
     }
     officialTitleEnter(el) {
-        el.style.transitionDelay = 5500 + 'ms'
+        el.style.transitionDelay = 1500 + 'ms'
     }
     carTitleEnter(el) {
-        el.style.transitionDelay = 6500 + 'ms'
+        el.style.transitionDelay = 2000 + 'ms'
     }
     scrollTitleEnter(el) {
-        el.style.transitionDelay = 7000 + 'ms'
+        el.style.transitionDelay = 3000 + 'ms'
     }
     onScroll () {
       this.titlePosition += (window.scrollY - this.lastY) / 10;
@@ -202,15 +202,15 @@
 
 svg #twitter {
   transform:translate(-3638px, -430px);
-  animation: twitter 7.5s ease;
+  animation: twitter 3s ease;
 }
 svg #instagram {
   transform:translate(-3638px, -430px);
-  animation: instagram 7.5s ease;
+  animation: instagram 3s ease;
 }
 svg #tiktok {
   transform:translate(-3638px, -430px);
-  animation: tiktok 7.5s ease;
+  animation: tiktok 3s ease;
 }
 
 svg .arrow-1{
