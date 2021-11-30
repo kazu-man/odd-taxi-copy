@@ -4,9 +4,11 @@
         <template v-slot:content>
             <transition name="book-banner">
                 <div class="book-banner pc" v-if="showFlg">
+                    <a href="https://csbs.shogakukan.co.jp/book?book_group_id=15925" target="_blank">
                     <img        
                         src="/images/20210127_bn.png"
-                    >   
+                    >
+                    </a>   
                 </div>
             </transition>
 

@@ -24,11 +24,13 @@
             </div>
 
             <div v-if="topScrollDoneFlg" class="blueray-banner" :key="'blueray-banner'">
+                <a href="https://special.canime.jp/oddtaxi/" target="_blank">
                 <img
                     
                     style="width:100%"
                     src="/images/bluray_banner.png"
                 >
+                </a>
             </div>
         </transition-group>
 

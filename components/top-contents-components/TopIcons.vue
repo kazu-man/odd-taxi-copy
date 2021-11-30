@@ -4,9 +4,11 @@
         <div class="prime-banner pc"
             v-if="topScrollDoneFlg" 
             :key="'prime-banner'">
+            <a href="https://www.amazon.co.jp/dp/B091KWC9GP" target="_blank">
                 <img
                 src="/images/prime_bn_pc.png"
-            >
+                >
+            </a>
         </div>
 
         <SideOfficial v-if="topScrollDoneFlg" :key="'side-official'"/>
