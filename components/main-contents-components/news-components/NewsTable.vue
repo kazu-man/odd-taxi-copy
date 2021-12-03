@@ -2,7 +2,7 @@
 
         <div class="news-table">
 
-            <v-row no-gutters class="news-row" v-for="data in newsData" :key="data.id">
+            <v-row no-gutters class="news-row" v-for="data in newsData" :key="data.id" @click="toNews(data)">
                     <v-col :key="'title'" cols="2" class="news-row-head">
                         <div class="sc-iwyYcG cunCrG">{{data.year}}<strong>{{data.date}}</strong></div>
                     </v-col>
@@ -10,7 +10,6 @@
                             {{data.newsTitle}}
                     </v-col>
             </v-row>
-
         </div>
 
 </template>
@@ -23,6 +22,11 @@
 
         @Prop({ required: true })
         newsData:any;
+
+        toNews(data){
+            console.log(data.id)
+            this.$store.commit("store/setNewsContent",data.id);
+        }
 
     }
 </script>

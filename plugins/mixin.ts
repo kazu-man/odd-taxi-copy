@@ -29,8 +29,10 @@ Vue.mixin({
     },
     thankYouAnimalFlg(){
         return this.$store.getters["store/thankYouAnimalFlg"]
+    },
+    getNewsContent(){
+        return this.$store.getters["store/getNewsContent"];
     }
-
   }
 
 })

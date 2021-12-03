@@ -1,7 +1,8 @@
 
 export const state = () => ({
     topScrollDoneFlg:false,
-    thankYouAnimalFlg:false
+    thankYouAnimalFlg:false,
+    newsContent:null
 });
 
 export const mutations = {
@@ -10,6 +11,9 @@ export const mutations = {
     },
     setThankYouAnimalFlg(state, flg){
         state.thankYouAnimalFlg = flg
+    },
+    setNewsContent(state, num){
+        state.newsContent = num
     },
 
 }
@@ -25,6 +29,8 @@ export const getters = {
     },
     thankYouAnimalFlg (state) {
         return state.thankYouAnimalFlg
-      }
-  
+      },
+    getNewsContent (state) {
+       return state.newsContent
+    } 
   }

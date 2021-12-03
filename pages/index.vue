@@ -20,7 +20,9 @@
           <TopIcons />  
 
           <ThankYouAnimal v-if="thankYouAnimalFlg"/>
-
+          <transition name="news-content">
+            <NewsContent v-if="getNewsContent != null"/>
+          </transition>
         </div>   
     </div>
     
@@ -67,5 +69,12 @@
     left:0;
 
 }
+.news-content-enter-active, .news-content-leave-active {
+    transition: all 1s;
+}
+.news-content-enter, .news-content-leave-to {
+    opacity: 0;
+}
+
 
 </style>
