@@ -26,7 +26,11 @@ Vue.mixin({
   computed:{
     topScrollDoneFlg(){
         return this.$store.getters["store/topScrollDoneFlg"]
+    },
+    thankYouAnimalFlg(){
+        return this.$store.getters["store/thankYouAnimalFlg"]
     }
+
   }
 
 })

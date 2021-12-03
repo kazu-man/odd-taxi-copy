@@ -18,6 +18,9 @@
           <MainContents />
 
           <TopIcons />  
+
+          <ThankYouAnimal v-if="thankYouAnimalFlg"/>
+
         </div>   
     </div>
     

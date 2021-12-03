@@ -17,7 +17,7 @@
         <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="icons">
             <div v-if="topScrollDoneFlg" class="thank-you" :key="'thank-you'">
                 <img
-                    
+                    @click="thankYouAnimal"
                     style="width:100%"
                     src="/images/thankyou_banner.png"
                 >
@@ -26,7 +26,6 @@
             <div v-if="topScrollDoneFlg" class="blueray-banner" :key="'blueray-banner'">
                 <a href="https://special.canime.jp/oddtaxi/" target="_blank">
                 <img
-                    
                     style="width:100%"
                     src="/images/bluray_banner.png"
                 >
@@ -129,6 +128,10 @@
 
         odokawaEnter(el) {
             el.style.transitionDelay = 100 + 'ms'
+        }
+
+        thankYouAnimal(){
+            this.$store.commit("store/setThankYouAnimalFlg",true);
         }
 
         @Watch("onScrollFlg")
