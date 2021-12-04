@@ -45,6 +45,8 @@ export default {
       '~/components/main-contents-components/about-components',
       '~/components/main-contents-components/news-components',
       '~/components/main-contents-components/character-components',
+      '~/components/common-parts-components/modal-contents',
+      '~/components/common-parts-components/modal-contents/newsPageTemplates',
     ]
   },
 

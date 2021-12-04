@@ -1,6 +1,6 @@
 <template>
 <div class="container" @click.self="close">
-    <svg @click="close" v-if="!imgSwitch" class="sc-kstrdz btjemE sc-fpIgQR gvLCNP" id="btn.svg" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+    <svg @click="close" class="sc-kstrdz btjemE sc-fpIgQR gvLCNP" id="btn.svg" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
         <rect id="長方形_616" data-name="長方形 616" width="52" height="52" class="sc-hBEYos dWjUC"></rect>
         <path id="シェイプ_3" data-name="シェイプ 3" d="M38.994,11.995H31.515L26,20.04l-5.514-8.045H13.007l9.254,13.5L13.007,39h7.479L26,30.952,31.515,39h7.479L29.74,25.5Z" class="sc-fodVxV cYLuAZ"></path>
     </svg>
@@ -10,7 +10,8 @@
 
                 <div class="text-block">
 
-                  <component :is="'news' + getNewsContent"></component>
+                  <component v-if="modalInfo.modalType == 'newsContent'" :is="modalInfo.newsNo"></component>
+                  <component v-else :is="modalInfo.modalType" :modalInfo="modalInfo"></component>
 
                 </div>
             </div>
@@ -20,14 +21,16 @@
     
 </template>
 <script lang="ts">
-    import {Component, Vue, Watch} from "nuxt-property-decorator";
-    import {Route} from 'vue-router'
+    import {Component, Vue, Prop} from "nuxt-property-decorator";
 
     @Component
     export default class NewsIndex extends Vue {
 
+        @Prop({required:true,default:null})
+        modalInfo:Object;
+
         close(){
-            this.$store.commit("store/setNewsContent",null);
+            this.$store.commit("store/setModalInfo",null);
         }
 
     }
@@ -41,20 +44,21 @@
         height:100%;
         display: block;
         width:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding:5%;
         font-family: "Noto Sans JP", sans-serif;
 
     }
 
     .content{
-        min-height: 100%;
+        height: 100%;
         overflow: scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .text-block{
-        height:200px;
+        height:100%;
+        width: 95%;
     }
   .container {
     padding:10% 3% !important;

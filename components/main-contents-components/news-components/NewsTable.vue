@@ -25,7 +25,13 @@
 
         toNews(data){
             console.log(data.id)
-            this.$store.commit("store/setNewsContent",data.id);
+
+            const modalInfo:Object = {
+                modalType:'newsContent',
+                newsNo:'news' + data.id
+            }
+
+            this.$store.commit("store/setModalInfo",modalInfo);
         }
 
     }

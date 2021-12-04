@@ -6,7 +6,7 @@
                 <AboutSvg v-if="showFlg"/>
             </div>
 
-            <CommonMoreBtn />
+            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -44,6 +44,12 @@
           }
         }
 
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'aboutDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
+        }
 
     }
 </script>

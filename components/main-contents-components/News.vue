@@ -14,7 +14,7 @@
 
             <NewsTable :newsData="newsData"/>
 
-            <CommonMoreBtn />
+            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -66,6 +66,13 @@
 
         mounted(){
             this.showFlg = true;
+        }
+
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'newsDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
         }
     }
 </script>

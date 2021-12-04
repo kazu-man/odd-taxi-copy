@@ -1,6 +1,6 @@
 <template>
 
-    <v-btn depressed class="more-btn" v-bind:class="{marginTop : marginTopNoneFlg}">
+    <v-btn depressed class="more-btn" v-bind:class="{marginTop : marginTopNoneFlg}" @click="commonBtnClick">
         More
     </v-btn>
 
@@ -14,6 +14,11 @@
 
         @Prop({required:false,default:true})
         marginTopNoneFlg:boolean;
+
+
+        commonBtnClick(){
+            this.$emit("commonBtnClick")
+        }
 
     }
 </script>

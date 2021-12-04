@@ -21,7 +21,7 @@
 
           <ThankYouAnimal v-if="thankYouAnimalFlg"/>
           <transition name="news-content">
-            <NewsContent v-if="getNewsContent != null"/>
+            <CommonModal v-if="getModalInfo != null" :modalInfo="getModalInfo"/>
           </transition>
         </div>   
     </div>

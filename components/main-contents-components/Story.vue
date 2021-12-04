@@ -22,7 +22,7 @@
                 何でも無いはずの人々の会話は、<br class="sp" />やがて失踪した1人の少女へと繋がっていく。
             </div>
 
-            <CommonMoreBtn />
+            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -37,6 +37,13 @@
     export default class Story extends Vue {
         showFlg:boolean = false;
         imagePath:string = "/images/story-title.svg";
+
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'storyDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
+        }
 
 
     }
