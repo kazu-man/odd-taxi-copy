@@ -74,8 +74,5 @@ img{
     margin-bottom:20px;
     max-width:250px;
 }
-.character-info-detail{
-    
-}
 
 </style>
