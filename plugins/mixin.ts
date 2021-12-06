@@ -20,6 +20,11 @@ Vue.mixin({
         toTikTok(){
             const url = 'tiktok.com/@oddtaxi'
             window.open(url, '_blank')
+        },
+        toPrime(){
+            const url = 'https://www.amazon.co.jp/dp/B091KWC9GP'
+            window.open(url, '_blank')
+
         }
   
   },
