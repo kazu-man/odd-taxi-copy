@@ -6,6 +6,7 @@
                 class="cast-image"
                 v-bind:class="{movie : movieFlg}"
                 v-bind:src="data.imageUrl"
+                @click="discBookDetail"
             >  
                 
                 <div v-if="movieFlg" class="movie-fog"></div>
@@ -45,6 +46,13 @@
 
         @Prop({required:false,default:false})
         movieFlg:boolean;
+
+        discBookDetail(){
+
+            this.$store.commit("store/setModalInfo",this.data);
+            
+        }
+
 
     }
 </script>

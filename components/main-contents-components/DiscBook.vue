@@ -19,7 +19,7 @@
 
             </div>
 
-            <CommonMoreBtn />
+            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -39,21 +39,43 @@
                 id:1,
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
-                imageSubTitle:"歌：スカートとPUNPEE"
+                imageSubTitle:"歌：スカートとPUNPEE",
+                modalType:"discBookDetail",
+                otherImageUrl:"/images/sugarless_kiss-disc.jpg",
+                composer:"PandaBoY",
+                comment:"二階堂ルイ役の声優としても出演させていただいているアニメ”オッドタクシー”ですが、この度アーティスト三森すずことしてもエンディング主題歌”シュガーレス・キッス”を歌わせていただくことになりました♪言葉遊びとメロディがポップでシュガーな楽曲になっています♪MVでも楽曲の可愛い世界観を楽しんでいただきたいです！アニメと共にたくさんの方のお耳と心に届きますように♡"
+
             },
             {
                 id:2,
                 imageUrl:"/images/sugarless_kiss-disc.jpg",
                 imageTitle:"エンディングテーマ「シュガーレス・キッス」",
-                imageSubTitle:"歌：三森すずこ"
+                imageSubTitle:"歌：三森すずこ",
+                modalType:"discBookDetail",
+                otherImageUrl:"/images/sugarless_kiss-disc.jpg",
+                composer:"PandaBoY",
+                comment:"二階堂ルイ役の声優としても出演させていただいているアニメ”オッドタクシー”ですが、この度アーティスト三森すずことしてもエンディング主題歌”シュガーレス・キッス”を歌わせていただくことになりました♪言葉遊びとメロディがポップでシュガーな楽曲になっています♪MVでも楽曲の可愛い世界観を楽しんでいただきたいです！アニメと共にたくさんの方のお耳と心に届きますように♡"
             },
             {
                 id:3,
                 imageUrl:"/images/sound-track-disc.jpg",
                 imageTitle:"ODDTAXI ORIGINAL SOUNDTRACK",
-                imageSubTitle:"SUMMIT (PUNPEE×VaVa×OMSB)"
+                imageSubTitle:"SUMMIT (PUNPEE×VaVa×OMSB)",
+                modalType:"discBookDetail",
+                otherImageUrl:"/images/sugarless_kiss-disc.jpg",
+                composer:"PandaBoY",
+                comment:"二階堂ルイ役の声優としても出演させていただいているアニメ”オッドタクシー”ですが、この度アーティスト三森すずことしてもエンディング主題歌”シュガーレス・キッス”を歌わせていただくことになりました♪言葉遊びとメロディがポップでシュガーな楽曲になっています♪MVでも楽曲の可愛い世界観を楽しんでいただきたいです！アニメと共にたくさんの方のお耳と心に届きますように♡"
+
             },
         ]
+
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'discBookMailDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
+        }
+
 
     }
 </script>

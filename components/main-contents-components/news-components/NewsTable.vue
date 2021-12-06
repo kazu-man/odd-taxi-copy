@@ -24,8 +24,6 @@
         newsData:any;
 
         toNews(data){
-            console.log(data.id)
-
             const modalInfo:Object = {
                 modalType:'newsContent',
                 newsNo:'news' + data.id
