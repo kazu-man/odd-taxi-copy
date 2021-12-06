@@ -50,7 +50,7 @@
         }
 
         resize(){
-            this.carouselRatio =  window.innerWidth  < 768 ? 1.5 : this.movieFlg ? 3.5 : 2.5;
+            this.carouselRatio =  window.innerWidth  < 768 ? 3.5 : this.movieFlg ? 2.5 : 2.5;
         }
 
         onScroll () {
@@ -92,7 +92,7 @@
 
 .main-carousel{
     width:90%;
-    padding:0 5%;
+    padding:0;
     margin-top:40px;
     margin: auto;
 }
@@ -120,7 +120,16 @@
   width:100%;
   transform: translate(0%, 0%);
 }
-
+@media screen and (max-width: 768px) {
+    .VueCarousel-slide{
+        min-height:250px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .VueCarousel-slide{
+        min-height:200px !important;
+    }
+}
 </style>
 
 <style >

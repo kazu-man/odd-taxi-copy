@@ -6,7 +6,7 @@
 
             <CommonCarousel :data="movieData" :movieFlg="true"/>
             
-            <CommonMoreBtn :marginTopNoneFlg="false"/>
+            <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -25,37 +25,51 @@
             {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
             {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
             {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
                         {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
                         {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
             {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
                         {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
                         {
                 imageUrl:"/images/oddtaxi-disc.jpg",
                 imageTitle:"オープニングテーマ「ODDTAXI」",
+                movieUrl:"https://www.youtube.com/watch?v=UFbx3Mg5sE0&feature=youtu.be"
             },
 
         ]
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'movieDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
+        }
 
 
     }

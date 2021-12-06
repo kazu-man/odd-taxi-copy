@@ -6,10 +6,9 @@
                 class="cast-image"
                 v-bind:class="{movie : movieFlg}"
                 v-bind:src="data.imageUrl"
-                @click="discBookDetail"
+                @click="contentAction"
             >  
                 
-                <div v-if="movieFlg" class="movie-fog"></div>
                 <v-icon
                 large
                 color="darken-2"
@@ -47,10 +46,15 @@
         @Prop({required:false,default:false})
         movieFlg:boolean;
 
-        discBookDetail(){
+        contentAction(){
+            if(this.movieFlg){
+                // @ts-ignore
+                const url = this.data.movieUrl;
+                window.open(url, '_blank')
+            }else{
+                this.$store.commit("store/setModalInfo",this.data);
+            }
 
-            this.$store.commit("store/setModalInfo",this.data);
-            
         }
 
 
@@ -61,7 +65,7 @@
 .disc-book-window{
     width:100%;
     height:100%;
-    padding:5%;
+    padding:1%;
     cursor: pointer;
 }
 .content{
@@ -73,6 +77,13 @@
 }
 .content img{
     width:100%;
+}
+.slide img, .movie img{
+    width:100%;
+    filter: grayscale(100%);
+}
+.slide img:hover, .movie img:hover{
+    filter: grayscale(0%);
 }
 .disc-book-window:hover{
     filter: brightness(1.1) !important;
@@ -100,16 +111,6 @@
     height: 100%;
     width: 100%;
     aspect-ratio: 16 / 9;
-}
-
-.movie-fog{
-    width:100%;
-    background:gray;
-    opacity:0.2;
-    position:absolute;
-    aspect-ratio: 16 / 9;
-    top:0;
-    left:0;
 }
 
 .disc-book-window:hover .movie-fog{

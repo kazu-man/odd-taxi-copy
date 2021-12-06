@@ -6,7 +6,7 @@
 
             <CommonCarousel :data="goodsData" :slideFlg="true"/>
 
-            <CommonMoreBtn :marginTopNoneFlg="false"/>
+            <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/>
 
         </template>
 
@@ -23,39 +23,91 @@
 
         goodsData:Object = [
             {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-            {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-            {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-                        {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-                        {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-            {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-                        {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
-                        {
-                imageUrl:"/images/oddtaxi-disc.jpg",
-                imageTitle:"オープニングテーマ「ODDTAXI」",
-            },
+                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageTitle:"タンブラー",
+                companyName:"ポニーキャニオン",
+                modalType:"goodsDetail",
+                goodsInfo:"φ80×142mm",
+                price:2200,
+                additionalImages:[
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                ]
 
+            },
+            {
+                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageTitle:"タンブラー",
+                companyName:"ポニーキャニオン",
+                modalType:"goodsDetail",
+                goodsInfo:"φ80×142mm",
+                price:2200,
+                additionalImages:[
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                ]
+
+            },
+            {
+                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageTitle:"タンブラー",
+                companyName:"ポニーキャニオン",
+                modalType:"goodsDetail",
+                goodsInfo:"φ80×142mm",
+                price:2200,
+                additionalImages:[
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                ]
+
+            },
+            {
+                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageTitle:"タンブラー",
+                companyName:"ポニーキャニオン",
+                modalType:"goodsDetail",
+                goodsInfo:"φ80×142mm",
+                price:2200,
+                additionalImages:[
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                    { 
+                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                    },
+                ]
+            },
         ]
+        commonBtnClick(){
+            const obj:Object = {
+                modalType:'goodsMainDetail',
+            }
+            this.$store.commit("store/setModalInfo",obj);
+        }
 
 
     }
