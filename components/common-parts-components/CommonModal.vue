@@ -88,6 +88,10 @@ svg {
     right:3%;
 }
 
+.container {
+    max-width: 100%;
+}
+
 </style>
 
 <style>
