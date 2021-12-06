@@ -9,19 +9,13 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - sample-lp',
-    title: 'sample-lp',
-    htmlAttrs: {
-      lang: 'en'
-    },
+    title: 'TVアニメ「オッドタクシー」',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/odd-taxi-favicon.png' } // ここを変更する
     ]
   },
 

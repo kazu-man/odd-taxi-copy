@@ -50,7 +50,7 @@
         }
 
         resize(){
-            this.carouselRatio =  window.innerWidth  < 768 ? 3.5 : this.movieFlg ? 2.5 : 2.5;
+            this.carouselRatio =  window.innerWidth  < 768 ? window.innerWidth  < 430 ? 1.5 : 3.5 :2.5;
         }
 
         onScroll () {
@@ -92,7 +92,7 @@
 
 .main-carousel{
     width:90%;
-    padding:0;
+    padding:0 5%;
     margin-top:40px;
     margin: auto;
 }
