@@ -35,7 +35,7 @@
         @Prop({required:false,default:false})
         movieFlg:boolean;
 
-        carouselFlg:boolean = true;
+        carouselFlg:boolean = false;
 
         carouselRatio:number = 1.5;
 
@@ -59,8 +59,9 @@
 
           if (targetHeight != 0) { 
                 //リサイズしないとカルーセルが表示されない
-                Vue.nextTick(() => window.dispatchEvent(new Event('resize')))
                 this.removeScrollListener();
+                this.carouselFlg = true
+                this.resize();
           }
         }
         removeScrollListener(){
