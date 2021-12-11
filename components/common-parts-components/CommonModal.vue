@@ -44,7 +44,7 @@
         height:100%;
         display: block;
         width:100%;
-        padding:50px 3% 3% 3%;
+        padding:3%;
         font-family: "Noto Sans JP", sans-serif;
 
     }
@@ -90,6 +90,12 @@ svg {
 
 .container {
     max-width: 100%;
+}
+
+@media screen and (max-width: 415px) {
+    #top{
+        padding:50px 3% 3% 3%;
+    }
 }
 
 </style>

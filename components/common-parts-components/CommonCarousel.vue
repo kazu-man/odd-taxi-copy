@@ -50,7 +50,7 @@
         }
 
         resize(){
-            this.carouselRatio =  window.innerWidth  < 768 ? window.innerWidth  < 430 ? 1.5 : 3.5 :2.5;
+            this.carouselRatio =  window.innerWidth  < 768 ? window.innerWidth  < 430 ? 1.5 : 3.5 : window.innerWidth  < 1000 ? 2.5 : 4.5;
         }
 
         onScroll () {
@@ -87,6 +87,11 @@
     margin-top:40px;
     margin: auto;
 }
+
+.main-carousel.movie{
+    padding:0;
+}
+
 .carousel{
     width:100%;    
 }
@@ -119,6 +124,12 @@
 @media screen and (max-width: 550px) {
     .VueCarousel-slide{
         min-height:200px !important;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .main-carousel{
+        width:120%;
+        margin-left: -10% !important;
     }
 }
 </style>

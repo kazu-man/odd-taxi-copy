@@ -5,35 +5,35 @@
             <GoToTop :goToTopShowFlg="goToTopShowFlg"/>
 
             <div id="news" class="black-bg" >
-                <News />
+                <News class="main-contents"/>
             </div>
 
             <div id="about" class="translucent-bg">
-                <About />
+                <About class="main-contents"/>
             </div>
 
             <div id="story" class="black-bg" >
-                <Story />
+                <Story class="main-contents"/>
             </div>
 
             <div id="character" class="translucent-bg">
-                <Character />
+                <Character class="main-contents"/>
             </div>
 
             <div id="castStaff" class="black-bg" >
-                <CastStaff />
+                <CastStaff class="main-contents"/>
             </div>
 
             <div id="discBook" class="translucent-bg">
-                <DiscBook />
+                <DiscBook class="main-contents"/>
             </div>
 
             <div id="goods" class="black-bg" >
-                <Goods />
+                <Goods class="main-contents"/>
             </div>
 
             <div id="movie" class="translucent-bg">
-                <Movie />
+                <Movie class="main-contents"/>
             </div>
 
         </div>
@@ -109,6 +109,22 @@ p{
     background: rgb(12 12 12 / 30%);
 }
 .black-bg,.translucent-bg{
-    min-height:400px;
+    min-height:700px;
+}
+
+.main-contents{
+    margin: auto;
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    .black-bg,.translucent-bg{
+        min-height:700px;
+    }
+}
+@media screen and (max-width: 415px) {
+    .black-bg,.translucent-bg{
+        min-height:550px;
+    }
 }
 </style>
