@@ -118,12 +118,12 @@
 }
 
 .play-icom{
-    position: absolute;
+    position: absolute !important;
     top: 50%;
     bottom: 50%;
     right: 50%;
     left: 50%;
-    color: rgb(244, 95, 74);
+    color: rgb(244, 95, 74) !important;
     font-size: 50px !important;
     pointer-events: none;
 }
