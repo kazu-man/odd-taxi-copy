@@ -44,7 +44,7 @@
         height:100%;
         display: block;
         width:100%;
-        padding:5%;
+        padding:50px 3% 3% 3%;
         font-family: "Noto Sans JP", sans-serif;
 
     }
@@ -61,7 +61,7 @@
         width: 95%;
     }
   .container {
-    padding:10% 3% !important;
+    padding:3% !important;
     width:100% !important;
     height:100% !important;
     background: black;
