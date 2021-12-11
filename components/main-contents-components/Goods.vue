@@ -23,7 +23,7 @@
 
         goodsData:Object = [
             {
-                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageUrl:"/images/water_bottle.png",
                 imageTitle:"タンブラー",
                 companyName:"ポニーキャニオン",
                 modalType:"goodsDetail",
@@ -31,19 +31,19 @@
                 price:2200,
                 additionalImages:[
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                 ]
 
             },
             {
-                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageUrl:"/images/water_bottle.png",
                 imageTitle:"タンブラー",
                 companyName:"ポニーキャニオン",
                 modalType:"goodsDetail",
@@ -51,19 +51,19 @@
                 price:2200,
                 additionalImages:[
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                 ]
 
             },
             {
-                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageUrl:"/images/water_bottle.png",
                 imageTitle:"タンブラー",
                 companyName:"ポニーキャニオン",
                 modalType:"goodsDetail",
@@ -71,19 +71,19 @@
                 price:2200,
                 additionalImages:[
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                 ]
 
             },
             {
-                imageUrl:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png",
+                imageUrl:"/images/water_bottle.png",
                 imageTitle:"タンブラー",
                 companyName:"ポニーキャニオン",
                 modalType:"goodsDetail",
@@ -91,13 +91,13 @@
                 price:2200,
                 additionalImages:[
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                     { 
-                        url:"/images/【オッドタクシー】_タンブラー_商品画像_1029_04-1024x1024.png"
+                        url:"/images/water_bottle.png"
                     },
                 ]
             },

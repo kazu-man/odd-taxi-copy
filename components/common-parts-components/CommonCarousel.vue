@@ -73,19 +73,9 @@
         changeFlgFalse(newVal,oldVal){
 
             this.carouselFlg = false;
+            this.carouselFlg = true;
 
         }
-
-        //表示画像数を変更する際、一度flgをfalseにしたのちtrueに戻す
-        @Watch("carouselFlg")
-        changeFlgTrue(newVal,oldVal){
-
-            if(!this.carouselFlg){
-                this.carouselFlg = true;
-            }
-
-        }
-
     }
 </script>
 
