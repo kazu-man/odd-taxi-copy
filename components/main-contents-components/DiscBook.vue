@@ -19,7 +19,7 @@
 
             </div>
 
-            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 

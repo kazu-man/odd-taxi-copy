@@ -6,7 +6,7 @@
                 <AboutSvg v-if="showFlg"/>
             </div>
 
-            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 

@@ -6,7 +6,7 @@
 
             <CommonCarousel :data="goodsData" :slideFlg="true"/>
 
-            <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 

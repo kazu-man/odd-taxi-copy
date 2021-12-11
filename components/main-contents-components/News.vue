@@ -14,7 +14,7 @@
 
             <NewsTable :newsData="newsData"/>
 
-            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 

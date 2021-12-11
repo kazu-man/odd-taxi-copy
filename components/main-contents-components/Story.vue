@@ -22,7 +22,7 @@
                 何でも無いはずの人々の会話は、<br class="sp" />やがて失踪した1人の少女へと繋がっていく。
             </div>
 
-            <CommonMoreBtn @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 

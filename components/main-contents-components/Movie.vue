@@ -6,7 +6,7 @@
 
             <CommonCarousel :data="movieData" :movieFlg="true"/>
             
-            <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/>
+            <!-- <CommonMoreBtn :marginTopNoneFlg="false" @commonBtnClick="commonBtnClick"/> -->
 
         </template>
 
