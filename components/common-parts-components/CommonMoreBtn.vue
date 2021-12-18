@@ -1,26 +1,21 @@
 <template>
-
-    <v-btn depressed class="more-btn" v-bind:class="{marginTop : marginTopNoneFlg}" @click="commonBtnClick">
-        More
-    </v-btn>
-
+  <v-btn depressed class="more-btn" :class="{marginTop : marginTopNoneFlg}" @click="commonBtnClick">
+    More
+  </v-btn>
 </template>
 
- <script lang="ts">
-    import { Vue, Component,Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class MoreBtn extends Vue {
-
-        @Prop({required:false,default:true})
+export default class MoreBtn extends Vue {
+        @Prop({ required: false, default: true })
         marginTopNoneFlg:boolean;
 
-
-        commonBtnClick(){
-            this.$emit("commonBtnClick")
+        commonBtnClick () {
+          this.$emit('commonBtnClick')
         }
-
-    }
+}
 </script>
 
 <style scoped>

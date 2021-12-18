@@ -1,64 +1,56 @@
 <template>
-    <div class="disc-book-window">
+  <div class="disc-book-window">
+    <div class="content" :class="{slide :slideFlg, movie : movieFlg}">
+      <img
+        class="cast-image"
+        :class="{movie : movieFlg}"
+        :src="data.imageUrl"
+        @click="contentAction"
+      >
 
-        <div class="content" v-bind:class="{slide :slideFlg, movie : movieFlg}">   
-            <img        
-                class="cast-image"
-                v-bind:class="{movie : movieFlg}"
-                v-bind:src="data.imageUrl"
-                @click="contentAction"
-            >  
-                
-                <v-icon
-                large
-                color="darken-2"
-                class="play-icom"
-                v-if="movieFlg"
-                >
-                    mdi-play-circle
-                </v-icon>
-
-        </div>
-        <div class="disc-title">
-            {{data.imageTitle}}
-        </div>
-
-        <div class="disc-sub-title" v-if="data.imageSubTitle != null">
-            {{data.imageSubTitle}}
-        </div>
-
+      <v-icon
+        v-if="movieFlg"
+        large
+        color="darken-2"
+        class="play-icom"
+      >
+        mdi-play-circle
+      </v-icon>
+    </div>
+    <div class="disc-title">
+      {{ data.imageTitle }}
     </div>
 
+    <div v-if="data.imageSubTitle != null" class="disc-sub-title">
+      {{ data.imageSubTitle }}
+    </div>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class DiscBookWindow extends Vue {
-
-        @Prop({required:true,default:null})
+export default class DiscBookWindow extends Vue {
+        @Prop({ required: true, default: null })
         data:Object;
 
-        @Prop({required:false,default:false})
+        @Prop({ required: false, default: false })
         slideFlg:boolean;
 
-        @Prop({required:false,default:false})
+        @Prop({ required: false, default: false })
         movieFlg:boolean;
 
-        contentAction(){
-            if(this.movieFlg){
-                // @ts-ignore
-                const url = this.data.movieUrl;
-                window.open(url, '_blank')
-            }else{
-                this.$store.commit("store/setModalInfo",this.data);
-            }
-
+        contentAction () {
+          if (this.movieFlg) {
+            // @ts-ignore
+            const url = this.data.movieUrl
+            window.open(url, '_blank')
+          } else {
+            this.$store.commit('store/setModalInfo', this.data)
+          }
         }
-
-
-    }
+}
 </script>
 
 <style scoped >

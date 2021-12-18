@@ -1,43 +1,39 @@
 <template>
-    <div class="goods-detail">
-            <div class="goods-title">
-                <div class="goods-name">
-                    {{modalInfo.imageTitle}}
-                </div>
-                <div class="goods-name sub-name">
-                    発売元：　{{modalInfo.companyName}}
-                </div>
-
-            </div>
-            <div class="goods-images" v-if="modalInfo.additionalImages != null">
-                <div class="goods-image" v-for="(image , index) in modalInfo.additionalImages" :key="index">
-                    <img :src="image.url" />
-                </div>
-            </div>
-
-            <div class="goods-info" v-if="modalInfo.goodsInfo != null">
-                {{modalInfo.goodsInfo}}
-            </div>
-
-            <div class="goods-price" v-if="modalInfo.price != null">
-                {{modalInfo.price}} 円
-            </div>
-
-            <a href="https://special.canime.jp/oddtaxi/">https://special.canime.jp/oddtaxi/</a>
+  <div class="goods-detail">
+    <div class="goods-title">
+      <div class="goods-name">
+        {{ modalInfo.imageTitle }}
+      </div>
+      <div class="goods-name sub-name">
+        発売元：　{{ modalInfo.companyName }}
+      </div>
+    </div>
+    <div v-if="modalInfo.additionalImages != null" class="goods-images">
+      <div v-for="(image , index) in modalInfo.additionalImages" :key="index" class="goods-image">
+        <img :src="image.url">
+      </div>
     </div>
 
+    <div v-if="modalInfo.goodsInfo != null" class="goods-info">
+      {{ modalInfo.goodsInfo }}
+    </div>
 
+    <div v-if="modalInfo.price != null" class="goods-price">
+      {{ modalInfo.price }} 円
+    </div>
+
+    <a href="https://special.canime.jp/oddtaxi/">https://special.canime.jp/oddtaxi/</a>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class GoodsDetail extends Vue {
-
-        @Prop({required:true, default:null})
+export default class GoodsDetail extends Vue {
+        @Prop({ required: true, default: null })
         modalInfo:Object;
-    }
+}
 </script>
 
 <style scoped>

@@ -1,17 +1,14 @@
 <template>
-
-    <div>
-        MOVIE DETAIL MODAL!!!!!!
-    </div>
-
+  <div>
+    MOVIE DETAIL MODAL!!!!!!
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class MovieDetail extends Vue {
+export default class MovieDetail extends Vue {
 
-
-    }
+}
 </script>

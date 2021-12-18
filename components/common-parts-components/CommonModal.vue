@@ -1,39 +1,39 @@
 <template>
-<div class="container" @click.self="close">
-    <svg @click="close" class="sc-kstrdz btjemE sc-fpIgQR gvLCNP" id="btn.svg" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
-        <rect id="長方形_616" data-name="長方形 616" width="52" height="52" class="sc-hBEYos dWjUC"></rect>
-        <path id="シェイプ_3" data-name="シェイプ 3" d="M38.994,11.995H31.515L26,20.04l-5.514-8.045H13.007l9.254,13.5L13.007,39h7.479L26,30.952,31.515,39h7.479L29.74,25.5Z" class="sc-fodVxV cYLuAZ"></path>
+  <div class="container" @click.self="close">
+    <svg
+      id="btn.svg"
+      class="sc-kstrdz btjemE sc-fpIgQR gvLCNP"
+      xmlns="http://www.w3.org/2000/svg"
+      width="52"
+      height="52"
+      viewBox="0 0 52 52"
+      @click="close"
+    >
+      <rect id="長方形_616" data-name="長方形 616" width="52" height="52" class="sc-hBEYos dWjUC" />
+      <path id="シェイプ_3" data-name="シェイプ 3" d="M38.994,11.995H31.515L26,20.04l-5.514-8.045H13.007l9.254,13.5L13.007,39h7.479L26,30.952,31.515,39h7.479L29.74,25.5Z" class="sc-fodVxV cYLuAZ" />
     </svg>
-    <div id="top" >
-       
-            <div class="content">
-
-                <div class="text-block">
-
-                  <component v-if="modalInfo.modalType == 'newsContent'" :is="modalInfo.newsNo"></component>
-                  <component v-else :is="modalInfo.modalType" :modalInfo="modalInfo"></component>
-
-                </div>
-            </div>
-
+    <div id="top">
+      <div class="content">
+        <div class="text-block">
+          <component :is="modalInfo.newsNo" v-if="modalInfo.modalType == 'newsContent'" />
+          <component :is="modalInfo.modalType" v-else :modal-info="modalInfo" />
+        </div>
+      </div>
     </div>
-</div>
-    
+  </div>
 </template>
 <script lang="ts">
-    import {Component, Vue, Prop} from "nuxt-property-decorator";
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
     @Component
-    export default class NewsIndex extends Vue {
-
-        @Prop({required:true,default:null})
+export default class NewsIndex extends Vue {
+        @Prop({ required: true, default: null })
         modalInfo:Object;
 
-        close(){
-            this.$store.commit("store/setModalInfo",null);
+        close () {
+          this.$store.commit('store/setModalInfo', null)
         }
-
-    }
+}
 </script>
 
 <style scoped>
@@ -120,5 +120,5 @@ svg {
         margin-block: 1em;
         margin-inline: 0px;
     }
-    
+
 </style>

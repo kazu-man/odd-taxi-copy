@@ -1,91 +1,81 @@
 <template>
+  <div ref="goToTop" class="main-content">
+    <GoToTop :go-to-top-show-flg="goToTopShowFlg" />
 
-        <div class="main-content" ref="goToTop">
+    <div id="news" class="black-bg">
+      <News class="main-contents" />
+    </div>
 
-            <GoToTop :goToTopShowFlg="goToTopShowFlg"/>
+    <div id="about" class="translucent-bg">
+      <About class="main-contents" />
+    </div>
 
-            <div id="news" class="black-bg" >
-                <News class="main-contents"/>
-            </div>
+    <div id="story" class="black-bg">
+      <Story class="main-contents" />
+    </div>
 
-            <div id="about" class="translucent-bg">
-                <About class="main-contents"/>
-            </div>
+    <div id="character" class="translucent-bg">
+      <Character class="main-contents" />
+    </div>
 
-            <div id="story" class="black-bg" >
-                <Story class="main-contents"/>
-            </div>
+    <div id="castStaff" class="black-bg">
+      <CastStaff class="main-contents" />
+    </div>
 
-            <div id="character" class="translucent-bg">
-                <Character class="main-contents"/>
-            </div>
+    <div id="discBook" class="translucent-bg">
+      <DiscBook class="main-contents" />
+    </div>
 
-            <div id="castStaff" class="black-bg" >
-                <CastStaff class="main-contents"/>
-            </div>
+    <div id="goods" class="black-bg">
+      <Goods class="main-contents" />
+    </div>
 
-            <div id="discBook" class="translucent-bg">
-                <DiscBook class="main-contents"/>
-            </div>
-
-            <div id="goods" class="black-bg" >
-                <Goods class="main-contents"/>
-            </div>
-
-            <div id="movie" class="translucent-bg">
-                <Movie class="main-contents"/>
-            </div>
-
-        </div>
-
+    <div id="movie" class="translucent-bg">
+      <Movie class="main-contents" />
+    </div>
+  </div>
 </template>
 
- <script lang="ts">
- import { Vue, Component, Prop } from 'vue-property-decorator'
-
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
  @Component
- export default class MainContents extends Vue {
-
+export default class MainContents extends Vue {
         goToTopShowFlg:boolean = false;
 
-        refs():any {
-            return this.$refs;
+        refs ():any {
+          return this.$refs
         }
 
-        mounted(){
-            const imageElement = this.refs().goToTop;
-            window.addEventListener('scroll', this.onScroll)
-
+        mounted () {
+          const imageElement = this.refs().goToTop
+          window.addEventListener('scroll', this.onScroll)
         }
 
-        onScroll(){
-            const imageElement = this.refs().goToTop;
+        onScroll () {
+          const imageElement = this.refs().goToTop
 
-            const innerHeight = window.innerHeight 
-            const targetHeight = imageElement.getBoundingClientRect().top;
+          const innerHeight = window.innerHeight
+          const targetHeight = imageElement.getBoundingClientRect().top
 
-            if (targetHeight < innerHeight) { 
-                this.goToTopShowFlg = true;
-                return;
-            }
+          if (targetHeight < innerHeight) {
+            this.goToTopShowFlg = true
+            return
+          }
 
-            this.goToTopShowFlg = false;
-
+          this.goToTopShowFlg = false
         }
-        
 
-    //computed
-    // get titleHeight(){
-    //     return this.titlePosition + '%'
-    // }
+  // computed
+  // get titleHeight(){
+  //     return this.titlePosition + '%'
+  // }
 
-    // mounted() {
- 
-    // }
+  // mounted() {
 
- }
- </script>
+  // }
+}
+</script>
 
 <style scoped>
 p{

@@ -1,52 +1,46 @@
 <template>
-    <CommonPartsTemplate :imagePath="imagePath">
-        
-        <template v-slot:content >
-            <div class="story-subtitle">
-                <h2>
-                    見慣れた街のはずなのに、この街は少しなにかが違う気がする。
-                </h2>
-            </div>
+  <CommonPartsTemplate :image-path="imagePath">
+    <template #content>
+      <div class="story-subtitle">
+        <h2>
+          見慣れた街のはずなのに、この街は少しなにかが違う気がする。
+        </h2>
+      </div>
 
-            <div class="story-plot">
-                平凡な毎日を送るタクシー運転手・小戸川。<br />
-                身寄りはなく、他人とあまり関わらない、<br class="sp" />少し偏屈で無口な変わり者。<br />
-                趣味は寝る前に聞く落語と仕事中に聞くラジオ。<br />
-                一応、友人と呼べるのはかかりつけでもある医者の剛力と、<br class="sp" />高校からの同級生、柿花ぐらい。<br />
-                彼が運ぶのは、どこかクセのある客ばかり。
-                <br />
-                <br />
-                バズりたくてしょうがない大学生・樺沢、<br class="sp" />何かを隠す看護師・白川、<br />
-                いまいち売れない芸人コンビ・ホモサピエンス、<br />
-                街のゴロツキ・ドブ、<br class="sp" />売出し中のアイドル・ミステリーキッス…<br />
-                何でも無いはずの人々の会話は、<br class="sp" />やがて失踪した1人の少女へと繋がっていく。
-            </div>
+      <div class="story-plot">
+        平凡な毎日を送るタクシー運転手・小戸川。<br>
+        身寄りはなく、他人とあまり関わらない、<br class="sp">少し偏屈で無口な変わり者。<br>
+        趣味は寝る前に聞く落語と仕事中に聞くラジオ。<br>
+        一応、友人と呼べるのはかかりつけでもある医者の剛力と、<br class="sp">高校からの同級生、柿花ぐらい。<br>
+        彼が運ぶのは、どこかクセのある客ばかり。
+        <br>
+        <br>
+        バズりたくてしょうがない大学生・樺沢、<br class="sp">何かを隠す看護師・白川、<br>
+        いまいち売れない芸人コンビ・ホモサピエンス、<br>
+        街のゴロツキ・ドブ、<br class="sp">売出し中のアイドル・ミステリーキッス…<br>
+        何でも無いはずの人々の会話は、<br class="sp">やがて失踪した1人の少女へと繋がっていく。
+      </div>
 
-            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
-
-        </template>
-
-    </CommonPartsTemplate>
-
+      <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
+    </template>
+  </CommonPartsTemplate>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class Story extends Vue {
+export default class Story extends Vue {
         showFlg:boolean = false;
-        imagePath:string = "/images/story-title.svg";
+        imagePath:string = '/images/story-title.svg';
 
-        commonBtnClick(){
-            const obj:Object = {
-                modalType:'storyDetail',
-            }
-            this.$store.commit("store/setModalInfo",obj);
+        commonBtnClick () {
+          const obj:Object = {
+            modalType: 'storyDetail'
+          }
+          this.$store.commit('store/setModalInfo', obj)
         }
-
-
-    }
+}
 </script>
 
 <style scoped>
@@ -88,6 +82,5 @@
             margin: 0px -5px;
         }
     }
-
 
 </style>

@@ -12,7 +12,7 @@ export default {
     title: 'TVアニメ「オッドタクシー」',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/odd-taxi-favicon.png' } // ここを変更する
@@ -21,7 +21,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/common-style.css',
+    '@/assets/css/common-style.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -40,7 +40,7 @@ export default {
       '~/components/main-contents-components/news-components',
       '~/components/main-contents-components/character-components',
       '~/components/common-parts-components/modal-contents',
-      '~/components/common-parts-components/modal-contents/newsPageTemplates',
+      '~/components/common-parts-components/modal-contents/newsPageTemplates'
     ]
   },
 
@@ -49,14 +49,14 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    ['vue-scrollto/nuxt', { lazy: false, duration:1000, easing:'ease-in-out' }]
+    ['vue-scrollto/nuxt', { lazy: false, duration: 1000, easing: 'ease-in-out' }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -1,54 +1,60 @@
 <template>
-    <transition name="thank-main">
-        <div class="thankYouAnimal" @click.self="closeAnimal" v-if="showFlg">
-            <svg @click="closeAnimal" v-if="!imgSwitch" class="sc-kstrdz btjemE sc-fpIgQR gvLCNP" id="btn.svg" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
-                <rect id="長方形_616" data-name="長方形 616" width="52" height="52" class="sc-hBEYos dWjUC"></rect>
-                <path id="シェイプ_3" data-name="シェイプ 3" d="M38.994,11.995H31.515L26,20.04l-5.514-8.045H13.007l9.254,13.5L13.007,39h7.479L26,30.952,31.515,39h7.479L29.74,25.5Z" class="sc-fodVxV cYLuAZ"></path>
-            </svg>
+  <transition name="thank-main">
+    <div v-if="showFlg" class="thankYouAnimal" @click.self="closeAnimal">
+      <svg
+        v-if="!imgSwitch"
+        id="btn.svg"
+        class="sc-kstrdz btjemE sc-fpIgQR gvLCNP"
+        xmlns="http://www.w3.org/2000/svg"
+        width="52"
+        height="52"
+        viewBox="0 0 52 52"
+        @click="closeAnimal"
+      >
+        <rect id="長方形_616" data-name="長方形 616" width="52" height="52" class="sc-hBEYos dWjUC" />
+        <path id="シェイプ_3" data-name="シェイプ 3" d="M38.994,11.995H31.515L26,20.04l-5.514-8.045H13.007l9.254,13.5L13.007,39h7.479L26,30.952,31.515,39h7.479L29.74,25.5Z" class="sc-fodVxV cYLuAZ" />
+      </svg>
 
-            <div class="thank-you-container">
-                <transition-group name="thank-you">
-                    <img 
-                        :key="'animal'"
-                        v-show="imgSwitch"
-                        @click="shiwtchImage"
-                        class="animal"
-                        src="/images/thankyou_animal.jpg"
-                    >
-                    <img 
-                        :key="'human'"
-                        v-show="!imgSwitch"
-                        src="/images/thankyou_human.jpg"
-                    >
-                </transition-group>
-            </div>
-        </div>
-    </transition>
+      <div class="thank-you-container">
+        <transition-group name="thank-you">
+          <img
+            v-show="imgSwitch"
+            :key="'animal'"
+            class="animal"
+            src="/images/thankyou_animal.jpg"
+            @click="shiwtchImage"
+          >
+          <img
+            v-show="!imgSwitch"
+            :key="'human'"
+            src="/images/thankyou_human.jpg"
+          >
+        </transition-group>
+      </div>
+    </div>
+  </transition>
 </template>
 
- <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class ThankYouAnimal extends Vue {
-
+export default class ThankYouAnimal extends Vue {
         imgSwitch:boolean = true;
         showFlg:boolean = false;
 
-        mounted(){
-            this.showFlg = true;
+        mounted () {
+          this.showFlg = true
         }
 
-        closeAnimal(){
-            this.$store.commit("store/setThankYouAnimalFlg",false);
+        closeAnimal () {
+          this.$store.commit('store/setThankYouAnimalFlg', false)
         }
 
-        shiwtchImage(){
-            this.imgSwitch = !this.imgSwitch
+        shiwtchImage () {
+          this.imgSwitch = !this.imgSwitch
         }
-
-
-    }
+}
 </script>
 
 <style scoped>
@@ -73,14 +79,14 @@
 
 }
 .thankYouAnimal img{
-    width:100%;    
+    width:100%;
 }
 
 .thankYouAnimal img.animal{
-    cursor:pointer;    
+    cursor:pointer;
 }
 .thankYouAnimal img.animal:hover{
-    filter:brightness(1.1);    
+    filter:brightness(1.1);
 }
 
 .thank-main-enter-active, .thank-main-leave-active {

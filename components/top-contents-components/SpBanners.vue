@@ -1,43 +1,36 @@
 <template>
-        <div class="sp-content">
-            <transition-group name="sp-content" >
-                <div v-if="showFlg" class="onair" :key="'onair'">
-                    <img
-                        src="/images/onair_btn_sp.png"
-                        
-                    >
-                </div>
-                <div v-if="showFlg" class="prime" :key="'prime'">
-
-                    <img
-                        src="/images/prime_bn_pc.png"
-                    >
-                </div>
-                <div v-if="showFlg" class="book" :key="'book'">
-                    <img
-                        src="/images/20210127_bn.png"
-                    >
-                </div>
-
-        
-            </transition-group>
-        </div>
-
-
+  <div class="sp-content">
+    <transition-group name="sp-content">
+      <div v-if="showFlg" :key="'onair'" class="onair">
+        <img
+          src="/images/onair_btn_sp.png"
+        >
+      </div>
+      <div v-if="showFlg" :key="'prime'" class="prime">
+        <img
+          src="/images/prime_bn_pc.png"
+        >
+      </div>
+      <div v-if="showFlg" :key="'book'" class="book">
+        <img
+          src="/images/20210127_bn.png"
+        >
+      </div>
+    </transition-group>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class SpBanners extends Vue {
-
+export default class SpBanners extends Vue {
         showFlg:boolean = false;
 
-        mounted(){
-            this.showFlg = true;
+        mounted () {
+          this.showFlg = true
         }
-    }
+}
 </script>
 
 <style scoped>

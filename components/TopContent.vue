@@ -1,49 +1,46 @@
 <template>
-              
-    <div style="z-index:2;position:relative;pointer-events: none;" ref="cityBg">
+  <div ref="cityBg" style="z-index:2;position:relative;pointer-events: none;">
+    <img
+      style="width:100%;"
+      src="/images/oddTaxi-background.png"
+      @load="load"
+    >
+    <transition name="odokawa" @enter="odokawaEnter">
+      <img
+        v-if="odokawaFlg"
+        class="odokawa-taxi"
+        src="/images/odokawaTaxi.png"
+      >
+    </transition>
+
+    <transition-group name="fadein" class="icons" @enter="afterTitleAnimationEnter">
+      <div v-if="topScrollDoneFlg" :key="'thank-you'" class="thank-you">
         <img
-            v-on:load="load"
-            style="width:100%;"
-            src="/images/oddTaxi-background.png"
+          style="width:100%"
+          src="/images/thankyou_banner.png"
+          @click="thankYouAnimal"
         >
-        <transition name="odokawa" @enter="odokawaEnter">
-            <img
-                v-if="odokawaFlg"
-                class="odokawa-taxi"
-                src="/images/odokawaTaxi.png"
-            >
-        </transition>
+      </div>
 
-        <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="icons">
-            <div v-if="topScrollDoneFlg" class="thank-you" :key="'thank-you'">
-                <img
-                    @click="thankYouAnimal"
-                    style="width:100%"
-                    src="/images/thankyou_banner.png"
-                >
-            </div>
-
-            <div v-if="topScrollDoneFlg" class="blueray-banner" :key="'blueray-banner'">
-                <a href="https://special.canime.jp/oddtaxi/" target="_blank">
-                <img
-                    style="width:100%"
-                    src="/images/bluray_banner.png"
-                >
-                </a>
-            </div>
-        </transition-group>
-
-    </div>
-
+      <div v-if="topScrollDoneFlg" :key="'blueray-banner'" class="blueray-banner">
+        <a href="https://special.canime.jp/oddtaxi/" target="_blank">
+          <img
+            style="width:100%"
+            src="/images/bluray_banner.png"
+          >
+        </a>
+      </div>
+    </transition-group>
+  </div>
 </template>
 
 <script lang="ts">
-    import {Component, Vue, Watch} from "nuxt-property-decorator";
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
-    @Component 
-    export default class TopContent extends Vue {
+    @Component
+export default class TopContent extends Vue {
         odokawaFlg : boolean = false;
-        //bgスクロールアニメーション関連
+        // bgスクロールアニメーション関連
         onScrollFlg:boolean = true;
         titlePosition: number = 0;
         imageSize:number = 0;
@@ -52,95 +49,89 @@
         timerObj:any = null;
         imageElement:any = null;
 
-        mounted(){
-            window.addEventListener('scroll', this.onScroll)
-
+        mounted () {
+          window.addEventListener('scroll', this.onScroll)
         }
-        load(){
-            this.goto()
-            this.odokawaFlg = true
-        }    
-        goto() {
-            this.imageElement = this.refs().cityBg;
-            const imageBottom = this.imageElement.offsetHeight - window.innerHeight;
-            window.scrollTo(0, imageBottom);
-            this.titlePosition = imageBottom;
-            this.imageSize = imageBottom;
 
-            this.$emit("loaderOff")
+        load () {
+          this.goto()
+          this.odokawaFlg = true
+        }
 
-          setTimeout(function(){
-              if(this.onScrollFlg){
-                  this.slowScrollTop()
+        goto () {
+          this.imageElement = this.refs().cityBg
+          const imageBottom = this.imageElement.offsetHeight - window.innerHeight
+          window.scrollTo(0, imageBottom)
+          this.titlePosition = imageBottom
+          this.imageSize = imageBottom
+
+          this.$emit('loaderOff')
+
+          setTimeout(function () {
+            if (this.onScrollFlg) {
+              this.slowScrollTop()
             }
-          }.bind(this), 3000);
-
+          }.bind(this), 3000)
         }
 
-        slowScrollTop(){
-            this.onScrollFlg = true;
-            this.timerObj = setInterval(function() {this.scrollBg()}.bind(this), 10)
+        slowScrollTop () {
+          this.onScrollFlg = true
+          this.timerObj = setInterval(function () { this.scrollBg() }.bind(this), 10)
         }
 
         onScroll () {
-
-          const currentPos = window.pageYOffset 
-          if (this.titlePosition < currentPos && this.onScrollFlg) { 
-            clearInterval(this.timerObj);
-            this.onScrollFlg = false;
+          const currentPos = window.pageYOffset
+          if (this.titlePosition < currentPos && this.onScrollFlg) {
+            clearInterval(this.timerObj)
+            this.onScrollFlg = false
           }
         }
 
+        scrollBg () {
+          if (this.titlePosition > 5 || !this.onScrollFlg) {
+            this.titlePosition = this.titlePosition - this.goToTopRate
+            const leftImageRate:number = (this.titlePosition / this.imageSize) * 100
 
-        scrollBg(){
-            if(this.titlePosition > 5 || !this.onScrollFlg){
-                this.titlePosition = this.titlePosition - this.goToTopRate;
-                const leftImageRate:number =  (this.titlePosition / this.imageSize) * 100;
-                
-                //加速度が5以上、もしくは残りが　75%スクロールが終わったら減速
-                if((leftImageRate < 25) && this.goToTopRate > 1){
+            // 加速度が5以上、もしくは残りが75%スクロールが終わったら減速
+            if ((leftImageRate < 25) && this.goToTopRate > 1) {
+              this.goToTopRate *= 0.85
 
-                  this.goToTopRate *= 0.85;
-
-                //5%以上スクロールが進んだら加速開始
-                }else if(leftImageRate > 10){
-
-                  this.goToTopRate *= 1.05;
-
-                }
-
-                window.scrollTo(0, this.titlePosition);
-
-            }else{
-              clearInterval(this.timerObj);
-              this.onScrollFlg = false;
+              // 5%以上スクロールが進んだら加速開始
+            } else if (leftImageRate > 10) {
+              this.goToTopRate *= 1.05
             }
+
+            window.scrollTo(0, this.titlePosition)
+          } else {
+            clearInterval(this.timerObj)
+            this.onScrollFlg = false
+          }
         }
 
-        refs():any {
-          return this.$refs;
+        refs ():any {
+          return this.$refs
         }
 
-        enter(el) {
-            el.style.transitionDelay = 2000 + 'ms'
-            this.odokawaFlg = true
+        enter (el) {
+          el.style.transitionDelay = 2000 + 'ms'
+          this.odokawaFlg = true
         }
 
-        odokawaEnter(el) {
-            el.style.transitionDelay = 100 + 'ms'
+        odokawaEnter (el) {
+          el.style.transitionDelay = 100 + 'ms'
         }
 
-        thankYouAnimal(){
-            this.$store.commit("store/setThankYouAnimalFlg",true);
+        thankYouAnimal () {
+          this.$store.commit('store/setThankYouAnimalFlg', true)
         }
 
-        @Watch("onScrollFlg")
-        onScrollByWatch(newVal, oldVal) {
-            if(!newVal){
-                this.$store.commit("store/setTopScrollDoneFlg",true);
-            }
+        @Watch('onScrollFlg')
+        onScrollByWatch (newVal, oldVal) {
+          if (!newVal) {
+            this.$store.commit('store/setTopScrollDoneFlg', true)
+          }
         }
-    }
+}
 </script>
 
 <style scoped>
@@ -154,7 +145,6 @@
     width:100%;
 
 }
-
 
 .city-enter-active,
 .city-leave-active {
@@ -190,7 +180,7 @@
     position: absolute;
     top: 25%;
     left: 20px;
-    z-index: 0;   
+    z-index: 0;
     cursor:pointer;
     pointer-events:auto;
 }
@@ -204,7 +194,7 @@
     position: absolute;
     top: 25%;
     right: 20px;
-    z-index: 0;   
+    z-index: 0;
     cursor:pointer;
     pointer-events:auto;
     animation: scale-down .2s;
@@ -218,7 +208,6 @@
 .icons img:hover{
     filter: brightness(1.1) !important;
 }
-
 
 @media screen and (max-width: 414px) {
     .icons {

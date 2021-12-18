@@ -1,57 +1,49 @@
 <template>
-    <CommonPartsTemplate :imagePath="imagePath">
-        
-        <template v-slot:content >
-            <div class="about-content" ref="aboutContent">
-                <AboutSvg v-if="showFlg"/>
-            </div>
+  <CommonPartsTemplate :image-path="imagePath">
+    <template #content>
+      <div ref="aboutContent" class="about-content">
+        <AboutSvg v-if="showFlg" />
+      </div>
 
-            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
-
-        </template>
-
-    </CommonPartsTemplate>
-
+      <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
+    </template>
+  </CommonPartsTemplate>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class About extends Vue {
+export default class About extends Vue {
         showFlg:boolean = false;
-        imagePath:string = "/images/about-title.svg";
+        imagePath:string = '/images/about-title.svg';
 
-
-        mounted(){
-            
-            window.addEventListener('scroll', this.onScroll)
-
+        mounted () {
+          window.addEventListener('scroll', this.onScroll)
         }
 
-        refs():any {
-            return this.$refs;
+        refs ():any {
+          return this.$refs
         }
-        
+
         onScroll () {
-         const imageElement = this.refs().aboutContent;
+          const imageElement = this.refs().aboutContent
 
-          const innerHeight = window.innerHeight 
-          const targetHeight = imageElement.getBoundingClientRect().top;
+          const innerHeight = window.innerHeight
+          const targetHeight = imageElement.getBoundingClientRect().top
 
-          if (targetHeight > 0 && targetHeight < innerHeight && !this.showFlg) { 
-            this.showFlg = true;
+          if (targetHeight > 0 && targetHeight < innerHeight && !this.showFlg) {
+            this.showFlg = true
           }
         }
 
-        commonBtnClick(){
-            const obj:Object = {
-                modalType:'aboutDetail',
-            }
-            this.$store.commit("store/setModalInfo",obj);
+        commonBtnClick () {
+          const obj:Object = {
+            modalType: 'aboutDetail'
+          }
+          this.$store.commit('store/setModalInfo', obj)
         }
-
-    }
+}
 </script>
 
 <style scoped>
@@ -59,7 +51,5 @@
         margin-top:20px;
         padding:10px;
     }
-
-
 
 </style>

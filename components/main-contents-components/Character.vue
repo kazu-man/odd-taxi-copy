@@ -1,26 +1,19 @@
 <template>
-    <CommonPartsTemplate :imagePath="imagePath" :imageFullWidthFlg="true">
-        
-        <template v-slot:content >
-
-            <CharacterRelation />
-
-        </template>
-
-    </CommonPartsTemplate>
-
+  <CommonPartsTemplate :image-path="imagePath" :image-full-width-flg="true">
+    <template #content>
+      <CharacterRelation />
+    </template>
+  </CommonPartsTemplate>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class Character extends Vue {
+export default class Character extends Vue {
         showFlg:boolean = false;
-        imagePath:string = "/images/character-title.svg";
-
-
-    }
+        imagePath:string = '/images/character-title.svg';
+}
 </script>
 
 <style scoped>

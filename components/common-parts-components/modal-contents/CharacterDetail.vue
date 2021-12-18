@@ -1,42 +1,35 @@
 <template>
-    <div class="character-detail">
-        <v-row class="character-row">
-            <v-col cols="12" sm="4" style="text-align: center;">
-                <img :src="'/images/' + modalInfo.character.characterImg" />
-            </v-col>
-            <v-col>
-
-                <div class="character-title">
-                    {{modalInfo.character.characterName}}
-                    <span>
-                        {{modalInfo.character.characterVoice}}
-                    </span>
-
-                </div>
-                <div class="character-info">
-                    {{modalInfo.character.characterInfo}}
-
-                </div>
-                <div class="character-info-detail">
-                    {{modalInfo.character.characterDetail}}
-
-                </div>
-
-            </v-col>
-        </v-row>
-    </div>
-
+  <div class="character-detail">
+    <v-row class="character-row">
+      <v-col cols="12" sm="4" style="text-align: center;">
+        <img :src="'/images/' + modalInfo.character.characterImg">
+      </v-col>
+      <v-col>
+        <div class="character-title">
+          {{ modalInfo.character.characterName }}
+          <span>
+            {{ modalInfo.character.characterVoice }}
+          </span>
+        </div>
+        <div class="character-info">
+          {{ modalInfo.character.characterInfo }}
+        </div>
+        <div class="character-info-detail">
+          {{ modalInfo.character.characterDetail }}
+        </div>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class CharacterDetail extends Vue {
-
-        @Prop({required:true, default:null})
+export default class CharacterDetail extends Vue {
+        @Prop({ required: true, default: null })
         modalInfo:Object;
-    }
+}
 </script>
 
 <style scoped>

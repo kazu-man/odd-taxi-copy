@@ -1,16 +1,14 @@
 <template>
   <v-app dark>
-    
     <Header />
 
     <v-main>
       <v-container>
-        <Nuxt v-cloak/>
+        <Nuxt v-cloak />
       </v-container>
     </v-main>
 
     <Footer />
-
   </v-app>
 </template>
 

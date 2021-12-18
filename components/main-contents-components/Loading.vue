@@ -1,45 +1,39 @@
 <template>
-    <div class="loading">
-        <div class="laoding-content">
-            <img
-                v-on:load="load"
-                src="/images/loading.svg"
-                class="loading-title"
-            >
-
-        </div>
-            <div class="car" v-bind:class="{border : showFlg}">
-                <div class="car-move" >
-                    <transition name="car">
-                        <img 
-                            v-if="showFlg"
-                            src="/images/footer-taxi.svg"
-                        />
-                    </transition>
-                </div>
-            </div>
-
+  <div class="loading">
+    <div class="laoding-content">
+      <img
+        src="/images/loading.svg"
+        class="loading-title"
+        @load="load"
+      >
     </div>
-
+    <div class="car" :class="{border : showFlg}">
+      <div class="car-move">
+        <transition name="car">
+          <img
+            v-if="showFlg"
+            src="/images/footer-taxi.svg"
+          >
+        </transition>
+      </div>
+    </div>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class Loading extends Vue {
-
+export default class Loading extends Vue {
         showFlg:boolean = false;
 
-        load(){
-            this.showFlg = true;
-            setTimeout(function(){
-                this.$emit("finishLoader")
-            }.bind(this), 2000);
-
+        load () {
+          this.showFlg = true
+          setTimeout(function () {
+            this.$emit('finishLoader')
+          }.bind(this), 2000)
         }
-
-    }
+}
 </script>
 
 <style scoped>

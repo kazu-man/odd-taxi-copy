@@ -1,38 +1,35 @@
 <template>
-    <div class="disc-detail">
-        <v-row class="disc-row">
-            <v-col cols="12" sm="5" style="text-align: center;">
-                <img :src="modalInfo.imageUrl" />
-            </v-col>
-            <v-col>
+  <div class="disc-detail">
+    <v-row class="disc-row">
+      <v-col cols="12" sm="5" style="text-align: center;">
+        <img :src="modalInfo.imageUrl">
+      </v-col>
+      <v-col>
+        <div class="disc-info">
+          <div class="disc-name">
+            {{ modalInfo.imageTitle }}
+          </div>
 
-            <div class="disc-info">
-                <div class="disc-name">
-                    {{modalInfo.imageTitle}}
-                </div>
+          <div class="disc-singer">
+            {{ modalInfo.imageSubTitle }}
+          </div>
 
-                <div class="disc-singer">
-                    {{modalInfo.imageSubTitle}}
-                </div>
+          <div class="disc-composer">
+            作詞・作曲・編曲： {{ modalInfo.composer }}<br>
+            4.7 [wed]Digital Single Release
+          </div>
 
-                <div class="disc-composer">
-                    作詞・作曲・編曲： {{modalInfo.composer}}<br />
-                    4.7 [wed]Digital Single Release
-                </div>
+          <div v-if="modalInfo.otherImageUrl != null" class="disc-other-image">
+            <img :src="modalInfo.otherImageUrl">
+          </div>
 
-                <div class="disc-other-image" v-if="modalInfo.otherImageUrl != null">
-                    <img :src="modalInfo.otherImageUrl" />
-                </div>
+          <div v-if="modalInfo.comment != null" class="disc-comment">
+            [▼COMMENT]<br>
 
-                <div class="disc-comment" v-if="modalInfo.comment != null">
-                    [▼COMMENT]<br />
-
-                    {{modalInfo.comment}}    
-
-                </div>
-
-            </div>
-                <!-- <div class="character-info">
+            {{ modalInfo.comment }}
+          </div>
+        </div>
+        <!-- <div class="character-info">
                     {{modalInfo.character.characterInfo}}
 
                 </div>
@@ -40,23 +37,19 @@
                     {{modalInfo.character.characterDetail}}
 
                 </div> -->
-
-            </v-col>
-        </v-row>
-    </div>
-
-
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
- <script lang="ts">
-    import { Vue, Component, Prop } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
     @Component
-    export default class DiscBookDetail extends Vue {
-
-        @Prop({required:true, default:null})
+export default class DiscBookDetail extends Vue {
+        @Prop({ required: true, default: null })
         modalInfo:Object;
-    }
+}
 </script>
 
 <style scoped>

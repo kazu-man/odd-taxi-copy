@@ -1,34 +1,31 @@
 <template>
+  <transition-group name="fadein" class="top-icons" @enter="afterTitleAnimationEnter">
+    <div
+      v-if="topScrollDoneFlg"
+      :key="'prime-banner'"
+      class="prime-banner pc"
+    >
+      <a href="https://www.amazon.co.jp/dp/B091KWC9GP" target="_blank">
+        <img
+          src="/images/prime_bn_pc.png"
+        >
+      </a>
+    </div>
 
-    <transition-group name="fadein" @enter="afterTitleAnimationEnter" class="top-icons">
-        <div class="prime-banner pc"
-            v-if="topScrollDoneFlg" 
-            :key="'prime-banner'">
-            <a href="https://www.amazon.co.jp/dp/B091KWC9GP" target="_blank">
-                <img
-                src="/images/prime_bn_pc.png"
-                >
-            </a>
-        </div>
-
-        <SideOfficial v-if="topScrollDoneFlg" :key="'side-official'"/>
-
-    </transition-group>
-
+    <SideOfficial v-if="topScrollDoneFlg" :key="'side-official'" />
+  </transition-group>
 </template>
 
 <script lang="ts">
-    import {Component, Vue, Prop} from "nuxt-property-decorator";
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-    @Component 
-    export default class TopIcons extends Vue {
+    @Component
+export default class TopIcons extends Vue {
 
-
-    }
+}
 </script>
 
 <style scoped>
-
 
 .prime-banner{
     position: fixed;
@@ -45,7 +42,6 @@
 .prime-banner img:hover{
     filter: brightness(1.1) !important;
 }
-
 
 .top-icons{
     z-index: 2;

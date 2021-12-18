@@ -1,48 +1,44 @@
 <template>
-    <div id="top" >
+  <div id="top">
+    <Loading v-if="loadingFlg" @finishLoader="finishLoader" />
+    <div v-if="animeDone">
+      <div class="mainBg" />
 
-       <Loading v-if="loadingFlg" @finishLoader="finishLoader"/>
-        <div v-if="animeDone">
-          <div class="mainBg" />
+      <div class="greenBg">
+        <Title />
+        <TopContent @loaderOff="loaderOff" />
+      </div>
+      <div v-if="animeDone" class="sp">
+        <SpBanners />
+      </div>
 
-          <div class="greenBg">
-                <Title />
-                <TopContent @loaderOff="loaderOff" />
+      <MainContents />
 
-          </div>
-          <div class="sp" v-if="animeDone">
-            <SpBanners />
-          </div>
+      <TopIcons />
 
-
-          <MainContents />
-
-          <TopIcons />  
-
-          <ThankYouAnimal v-if="thankYouAnimalFlg"/>
-          <transition name="news-content">
-            <CommonModal v-if="getModalInfo != null" :modalInfo="getModalInfo"/>
-          </transition>
-        </div>   
+      <ThankYouAnimal v-if="thankYouAnimalFlg" />
+      <transition name="news-content">
+        <CommonModal v-if="getModalInfo != null" :modal-info="getModalInfo" />
+      </transition>
     </div>
-    
+  </div>
 </template>
 <script lang="ts">
-    import {Component, Vue, Watch} from "nuxt-property-decorator";
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
-    @Component 
-    export default class Index extends Vue {
-
+    @Component
+export default class Index extends Vue {
       loadingFlg:boolean = true;
       animeDone:boolean = false;
 
-      finishLoader(){
-        this.animeDone = true;
+      finishLoader () {
+        this.animeDone = true
       }
-      loaderOff(){
-        this.loadingFlg = false;
+
+      loaderOff () {
+        this.loadingFlg = false
       }
-    }
+}
 </script>
 
 <style scoped>
@@ -75,6 +71,5 @@
 .news-content-enter, .news-content-leave-to {
     opacity: 0;
 }
-
 
 </style>

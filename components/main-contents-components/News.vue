@@ -1,80 +1,76 @@
 <template>
-    <CommonPartsTemplate :imagePath="imagePath">
+  <CommonPartsTemplate :image-path="imagePath">
+    <template #content>
+      <transition name="book-banner">
+        <div v-if="showFlg" class="book-banner pc">
+          <a href="https://csbs.shogakukan.co.jp/book?book_group_id=15925" target="_blank">
+            <img
+              src="/images/20210127_bn.png"
+            >
+          </a>
+        </div>
+      </transition>
 
-        <template v-slot:content>
-            <transition name="book-banner">
-                <div class="book-banner pc" v-if="showFlg">
-                    <a href="https://csbs.shogakukan.co.jp/book?book_group_id=15925" target="_blank">
-                    <img        
-                        src="/images/20210127_bn.png"
-                    >
-                    </a>   
-                </div>
-            </transition>
+      <NewsTable :news-data="newsData" />
 
-            <NewsTable :newsData="newsData"/>
-
-            <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
-
-        </template>
-
-    </CommonPartsTemplate>
-
+      <!-- <CommonMoreBtn @commonBtnClick="commonBtnClick"/> -->
+    </template>
+  </CommonPartsTemplate>
 </template>
 
- <script lang="ts">
-    import { Vue, Component } from 'vue-property-decorator'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
     @Component
-    export default class News extends Vue {
+export default class News extends Vue {
         showFlg:boolean = false;
         imagePath:string = '/images/news.svg';
 
         newsData:Object = [
-            {
-                id:1,
-                year : 2021,
-                date : 11.01,
-                newsTitle : "WEBラジオ「ODDTAXI RADIO～今いい感じなんです～」#2 & #3のゲストが決定！"
-            },
-            {
-                id:2,
-                year : 2021,
-                date : 10.15,
-                newsTitle : "Blu-rayBOX4400セット達成記念！WEBラジオ「ODDTAXI RADIO～今いい感じなんです..."
-            },
-            {
-                id:3,
-                year : 2021,
-                date : 10.17,
-                newsTitle : "梅田Lateralにて10月16日(土)木下麦監督サイン会の開催が決定！"
-            },
-            {
-                id:4,
-                year : 2021,
-                date : 10.17,
-                newsTitle : "オッドタクシー×梅田Lateralコラボカフェ詳細を公開！"
-            },
-            {
-                id:5,
-                year : 2021,
-                date : 10.06,
-                newsTitle : "Twitterフォロワー4万人達成御礼！スマホ用壁紙をプレゼント！"
-            },
+          {
+            id: 1,
+            year: 2021,
+            date: 11.01,
+            newsTitle: 'WEBラジオ「ODDTAXI RADIO～今いい感じなんです～」#2 & #3のゲストが決定！'
+          },
+          {
+            id: 2,
+            year: 2021,
+            date: 10.15,
+            newsTitle: 'Blu-rayBOX4400セット達成記念！WEBラジオ「ODDTAXI RADIO～今いい感じなんです...'
+          },
+          {
+            id: 3,
+            year: 2021,
+            date: 10.17,
+            newsTitle: '梅田Lateralにて10月16日(土)木下麦監督サイン会の開催が決定！'
+          },
+          {
+            id: 4,
+            year: 2021,
+            date: 10.17,
+            newsTitle: 'オッドタクシー×梅田Lateralコラボカフェ詳細を公開！'
+          },
+          {
+            id: 5,
+            year: 2021,
+            date: 10.06,
+            newsTitle: 'Twitterフォロワー4万人達成御礼！スマホ用壁紙をプレゼント！'
+          }
 
         ]
 
-        mounted(){
-            this.showFlg = true;
+        mounted () {
+          this.showFlg = true
         }
 
-        commonBtnClick(){
-            const obj:Object = {
-                modalType:'newsDetail',
-            }
-            this.$store.commit("store/setModalInfo",obj);
+        commonBtnClick () {
+          const obj:Object = {
+            modalType: 'newsDetail'
+          }
+          this.$store.commit('store/setModalInfo', obj)
         }
-    }
+}
 </script>
 
 <style scoped>
